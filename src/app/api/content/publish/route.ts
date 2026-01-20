@@ -23,17 +23,23 @@ import { type NextRequest, NextResponse } from "next/server";
     }) // The Optimizely Graph Client to use when resolving paths to publish
 })*/
 
-async function analyzeRequest(
-	request: NextRequest,
-): Promise<
-	| { action?: string; contentLinks: ContentLinkWithLocale[]; documentIds: string[]; subject: "bulk" | "doc" }
+async function analyzeRequest(request: NextRequest): Promise<
+	| {
+			action?: string;
+			contentLinks: ContentLinkWithLocale[];
+			documentIds: (string | undefined)[];
+			subject: "bulk" | "doc";
+	  }
 	| { error: any; subject: "error" }
 > {
 	try {
-		const body = await request.json();
+		const body = (await request.json()) as {
+			data?: { docId?: string; items?: Record<string, unknown> };
+			type?: { action?: string; subject?: string };
+		};
 		const subject = body?.type?.subject ?? "unknown";
 		const action = body?.type?.action ?? undefined;
-		const documentIds: string[] =
+		const documentIds: (string | undefined)[] =
 			body?.type?.subject === "bulk"
 				? Object.getOwnPropertyNames(body?.data?.items ?? {})
 				: body?.type?.subject === "doc"
@@ -41,7 +47,7 @@ async function analyzeRequest(
 					: [];
 		const contentLinks = documentIds
 			.map((docId) => {
-				const regexResult = docId.match(/^([a-z0-9#-]+)_(([0-9]+)_){0,1}([a-zA-Z-_]{1,5})_([a-zA-Z]+)(_(.+)){0,1}$/);
+				const regexResult = docId?.match(/^([a-z0-9#-]+)_(([0-9]+)_){0,1}([a-zA-Z-_]{1,5})_([a-zA-Z]+)(_(.+)){0,1}$/);
 				if (!regexResult) return undefined;
 				return {
 					key: regexResult.at(1)?.replaceAll("-", ""),
@@ -52,7 +58,7 @@ async function analyzeRequest(
 				} as ContentLinkWithLocale;
 			})
 			.filter(isNotNullOrUndefined);
-		return { action, contentLinks, documentIds, subject };
+		return { action, contentLinks, documentIds, subject: subject as "bulk" | "doc" };
 	} catch (e: any) {
 		return {
 			error: typeof e.message === "string" ? e.message : e,
