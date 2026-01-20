@@ -1,0 +1,53 @@
+{
+	"baseType": "page",
+	"compositionBehaviors": [],
+	"description": "A page entirely built out of blocks.",
+	"displayName": "Landing Page",
+	"key": "LandingPage",
+	"mayContainTypes": ["*"],
+	"mediaFileExtensions": [],
+	"properties": {
+		"MainContentArea": {
+			"description": "Add blocks here to create the page",
+			"displayName": "Page Contents",
+			"editorSettings": {},
+			"group": "Information",
+			"items": {
+				"allowedTypes": [],
+				"restrictedTypes": [],
+				"type": "content"
+			},
+			"localized": false,
+			"required": false,
+			"sortOrder": 0,
+			"type": "array"
+		},
+		"SeoSettings": {
+			"contentType": "PageSeoSettings",
+			"description": "",
+			"displayName": "Seo Settings",
+			"editorSettings": {},
+			"group": "SeoSettings",
+			"localized": false,
+			"required": false,
+			"sortOrder": 0,
+			"type": "component"
+		},
+		"TopContentArea": {
+			"description": "Content shown in a full-width container at the top of the page",
+			"displayName": "Hero Content",
+			"editorSettings": {},
+			"group": "Information",
+			"items": {
+				"allowedTypes": [],
+				"restrictedTypes": [],
+				"type": "content"
+			},
+			"localized": false,
+			"required": false,
+			"sortOrder": 0,
+			"type": "array"
+		}
+	},
+	"sortOrder": 100
+}

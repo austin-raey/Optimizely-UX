@@ -1,0 +1,24 @@
+{
+	"baseType": "component",
+	"compositionBehaviors": ["elementEnabled"],
+	"description": "",
+	"displayName": "Paragraph",
+	"key": "ParagraphElement",
+	"mayContainTypes": [],
+	"mediaFileExtensions": [],
+	"properties": {
+		"text": {
+			"description": "",
+			"displayName": "Text",
+			"editorSettings": {},
+			"format": "html",
+			"group": "Information",
+			"indexingType": "searchable",
+			"localized": true,
+			"required": true,
+			"sortOrder": 10,
+			"type": "string"
+		}
+	},
+	"sortOrder": 0
+}

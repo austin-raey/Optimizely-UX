@@ -1,0 +1,58 @@
+{
+	"displayName": "Section Background",
+	"isDefault": false,
+	"key": "BackgroundRow",
+	"nodeType": "row",
+	"settings": {
+		"backgroundMask": {
+			"choices": {
+				"dark": {
+					"displayName": "Dark",
+					"sortOrder": 30
+				},
+				"light": {
+					"displayName": "Light",
+					"sortOrder": 20
+				},
+				"none": {
+					"displayName": "No mask [default]",
+					"sortOrder": 10
+				}
+			},
+			"displayName": "Background mask",
+			"sortOrder": 30
+		},
+		"contentOverflow": {
+			"choices": {
+				"hide": {
+					"displayName": "Hide [default]",
+					"sortOrder": 10
+				},
+				"show": {
+					"displayName": "Show",
+					"sortOrder": 20
+				}
+			},
+			"displayName": "Content overflow",
+			"sortOrder": 20
+		},
+		"verticalAlignContent": {
+			"choices": {
+				"bottom": {
+					"displayName": "Bottom",
+					"sortOrder": 30
+				},
+				"middle": {
+					"displayName": "Center",
+					"sortOrder": 20
+				},
+				"top": {
+					"displayName": "Top [default]",
+					"sortOrder": 10
+				}
+			},
+			"displayName": "Vertical alignment",
+			"sortOrder": 10
+		}
+	}
+}

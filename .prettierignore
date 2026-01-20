@@ -1,0 +1,10 @@
+node_modules
+.next
+coverage
+playwright-report
+test-results
+src/gql/**/*
+pnpm-lock.yaml
+**/__generated__/**/*
+**/src/gql/**/*
+.env*

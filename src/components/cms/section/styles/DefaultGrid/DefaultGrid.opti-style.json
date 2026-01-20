@@ -1,0 +1,89 @@
+{
+	"baseType": "section",
+	"displayName": "Default",
+	"isDefault": true,
+	"key": "DefaultGrid",
+	"settings": {
+		"gridWidth": {
+			"choices": {
+				"default": {
+					"displayName": "Default",
+					"sortOrder": 10
+				},
+				"full": {
+					"displayName": "Full width",
+					"sortOrder": 20
+				},
+				"narrow": {
+					"displayName": "Narrow",
+					"sortOrder": 40
+				},
+				"wide": {
+					"displayName": "Wide",
+					"sortOrder": 30
+				}
+			},
+			"displayName": "Width",
+			"editor": "",
+			"sortOrder": 10
+		},
+		"sectionColor": {
+			"choices": {
+				"black": {
+					"displayName": "Black",
+					"sortOrder": 20
+				},
+				"blue": {
+					"displayName": "Blue",
+					"sortOrder": 30
+				},
+				"default": {
+					"displayName": "Default",
+					"sortOrder": 10
+				},
+				"green": {
+					"displayName": "Green",
+					"sortOrder": 40
+				},
+				"lightgrey": {
+					"displayName": "Light Grey",
+					"sortOrder": 80
+				},
+				"lightred": {
+					"displayName": "Light Red",
+					"sortOrder": 70
+				},
+				"orange": {
+					"displayName": "Orange",
+					"sortOrder": 50
+				},
+				"purple": {
+					"displayName": "Purple",
+					"sortOrder": 60
+				}
+			},
+			"displayName": "Color",
+			"editor": "",
+			"sortOrder": 30
+		},
+		"vSpacing": {
+			"choices": {
+				"default": {
+					"displayName": "Default",
+					"sortOrder": 10
+				},
+				"large": {
+					"displayName": "Large",
+					"sortOrder": 30
+				},
+				"small": {
+					"displayName": "Small",
+					"sortOrder": 20
+				}
+			},
+			"displayName": "Vertical spacing",
+			"editor": "",
+			"sortOrder": 20
+		}
+	}
+}

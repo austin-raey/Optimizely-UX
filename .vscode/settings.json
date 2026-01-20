@@ -1,0 +1,18 @@
+{
+	"biome.enabled": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.sort.json": "explicit"
+	},
+	"editor.defaultFormatter": "prettier.prettier-vscode",
+	"editor.detectIndentation": false,
+	"editor.formatOnSave": true,
+	"editor.insertSpaces": false,
+	"eslint.enable": true,
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	"npm.packageManager": "pnpm",
+	"prettier.enable": true
+}

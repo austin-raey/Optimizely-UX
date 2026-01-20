@@ -1,0 +1,57 @@
+// Auto generated dictionary
+// @not-modified => When this line is removed, the "force" parameter of the CLI tool is required to overwrite this file
+import { type ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
+
+import ComponentFactory from "./component";
+import ExperienceFactory from "./experience";
+import ImageFactory from "./image";
+import MediaFactory from "./media";
+import NodeComponent from "./node";
+import NodesFactory from "./nodes";
+import PageFactory from "./page";
+import SectionFactory from "./section";
+import VideoFactory from "./video";
+
+// Prefix entries - if needed
+prefixDictionaryEntries(VideoFactory, "Media");
+prefixDictionaryEntries(VideoFactory, "Video");
+prefixDictionaryEntries(VideoFactory, "Component");
+prefixDictionaryEntries(SectionFactory, "Section");
+prefixDictionaryEntries(PageFactory, "Page");
+prefixDictionaryEntries(NodesFactory, "Nodes");
+prefixDictionaryEntries(MediaFactory, "Media");
+prefixDictionaryEntries(MediaFactory, "Component");
+prefixDictionaryEntries(ImageFactory, "Media");
+prefixDictionaryEntries(ImageFactory, "Image");
+prefixDictionaryEntries(ImageFactory, "Component");
+prefixDictionaryEntries(ExperienceFactory, "Experience");
+prefixDictionaryEntries(ExperienceFactory, "Page");
+prefixDictionaryEntries(ComponentFactory, "Component");
+
+// Build dictionary
+export const CmsFactory: ComponentTypeDictionary = [
+	{
+		component: NodeComponent,
+		type: "Node",
+	},
+	...VideoFactory,
+	...SectionFactory,
+	...PageFactory,
+	...NodesFactory,
+	...MediaFactory,
+	...ImageFactory,
+	...ExperienceFactory,
+	...ComponentFactory,
+];
+
+// Export dictionary
+export default CmsFactory;
+
+// Helper functions
+function prefixDictionaryEntries(list: ComponentTypeDictionary, prefix: string): ComponentTypeDictionary {
+	list.forEach((component, idx, dictionary) => {
+		dictionary[idx].type =
+			typeof component.type == "string" ? prefix + "/" + component.type : [prefix, ...component.type];
+	});
+	return list;
+}

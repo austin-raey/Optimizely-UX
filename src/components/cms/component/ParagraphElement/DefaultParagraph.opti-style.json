@@ -1,0 +1,42 @@
+{
+	"contentType": "ParagraphElement",
+	"displayName": "Default",
+	"isDefault": true,
+	"key": "DefaultParagraph",
+	"settings": {
+		"placement": {
+			"choices": {
+				"center": {
+					"displayName": "Center",
+					"sortOrder": 20
+				},
+				"left": {
+					"displayName": "Left",
+					"sortOrder": 10
+				},
+				"right": {
+					"displayName": "Right",
+					"sortOrder": 30
+				}
+			},
+			"displayName": "Placement",
+			"editor": "",
+			"sortOrder": 20
+		},
+		"transform": {
+			"choices": {
+				"default": {
+					"displayName": "Default",
+					"sortOrder": 10
+				},
+				"full": {
+					"displayName": "Full width",
+					"sortOrder": 20
+				}
+			},
+			"displayName": "Width",
+			"editor": "",
+			"sortOrder": 10
+		}
+	}
+}

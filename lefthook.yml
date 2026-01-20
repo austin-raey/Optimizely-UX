@@ -1,0 +1,10 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - run: pnpm exec prettier --write --list-different --cache {staged_files}
+      glob: "*.{js,ts,jsx,tsx,mjs,cjs,json,jsonc}"
+    - run: pnpm exec eslint --no-warn-ignored --fix {staged_files}
+      glob: "*.{js,ts,jsx,tsx,mjs,cjs}"
+    - run: pnpm exec tsc --noEmit
+      exclude: ".next"
+      glob: "*.{ts,tsx}"

@@ -1,0 +1,25 @@
+@font-face {
+	font-family: "Mount Sinai Sans";
+	font-display: swap;
+	font-stretch: 100%;
+	font-style: normal;
+	font-weight: 100 900;
+	src: url("/fonts/MountSinai-SansVF_W_WdthWght.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Mount Sinai Sans";
+	font-display: swap;
+	font-stretch: 100%;
+	font-style: italic;
+	font-weight: 100 900;
+	src: url("/fonts/MountSinai-SansVFItalic_W_WdthWght.woff2") format("woff2");
+}
+
+:root {
+	--font-local: "Mount Sinai Sans", Helvetica, Arial, sans-serif;
+}
+
+html,
+body {
+	font-family: var(--font-local);
+}
