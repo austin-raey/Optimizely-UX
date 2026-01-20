@@ -93,6 +93,7 @@
 	},
 	"scripts": {
 		"build": "pnpm graph:compile && next build",
+		"build:full": "pnpm build && opti-graph webhook:create",
 		"build:storybook": "storybook build",
 		"commit": "cz",
 		"commitlint": "commitlint --edit",
