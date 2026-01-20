@@ -1,4 +1,3 @@
-import "server-only";
 import { createPage } from "@remkoj/optimizely-cms-nextjs/page";
 import { isDevelopment } from "@remkoj/optimizely-cms-react/rsc";
 import { AuthMode, createClient, IOptiGraphClient } from "@remkoj/optimizely-graph-client";
