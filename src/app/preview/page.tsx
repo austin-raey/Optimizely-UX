@@ -1,18 +1,27 @@
+import "server-only";
 import { createEditPageComponent } from "@remkoj/optimizely-cms-nextjs/preview";
-import { createClient } from "@remkoj/optimizely-graph-client";
+import { createAuthorizedClient } from "@remkoj/optimizely-cms-nextjs/rsc";
 
-import { setupFactory } from "@/components/cms/factory";
-import { getContentById } from "@/gql/functions";
+import { factory } from "@/components/cms/factory";
+import { getContentById as loader } from "@/gql/functions";
 
-export default createEditPageComponent(setupFactory(), {
-	clientFactory: (token?: string) =>
-		createClient(undefined, token, {
-			cache: false,
-			nextJsFetchDirectives: true,
-			queryCache: false,
-		}),
-	loader: getContentById,
-	refreshTimeout: 500, // Enable this line when you have issues with the preview not updating at all
+export default createEditPageComponent(factory, {
+	clientFactory: (token?: string) => createAuthorizedClient(token),
+	contentResolver: ({ searchParams: { ctx, key, loc: locale, preview_token: token, ver: version } }) => {
+		if (key) {
+			return {
+				ctx,
+				key,
+				locale: version ? undefined : locale,
+				path: null,
+				token,
+				version,
+			};
+		}
+		return undefined;
+	},
+	loader,
+	//refreshTimeout: 500, // Enable this line when you have issues with the preview not updating at all
 });
 
 export const dynamic = "force-dynamic";
