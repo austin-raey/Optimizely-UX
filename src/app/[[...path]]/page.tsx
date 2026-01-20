@@ -1,7 +1,7 @@
 import "server-only";
 import { createPage } from "@remkoj/optimizely-cms-nextjs/page";
-import { createClient } from "@remkoj/optimizely-cms-nextjs/rsc";
-import { AuthMode } from "@remkoj/optimizely-graph-client";
+import { isDevelopment } from "@remkoj/optimizely-cms-react/rsc";
+import { AuthMode, createClient } from "@remkoj/optimizely-graph-client";
 import { draftMode } from "next/headers";
 
 import { factory } from "~/components/cms/factory";
@@ -30,8 +30,13 @@ const {
 	 *
 	 * @returns     The Optimizely Graph Client
 	 */
-	client: async (_, scope) => {
-		const client = createClient();
+	client: async (token?: string, scope?: "metadata" | "request") => {
+		const isDev = isDevelopment();
+		const client = createClient(undefined, token, {
+			cache: !isDev,
+			nextJsFetchDirectives: true,
+			queryCache: !isDev,
+		});
 		if (scope === "request" && (await draftMode()).isEnabled) {
 			client.updateAuthentication(AuthMode.HMAC);
 			client.enablePreview();
