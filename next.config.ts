@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+	basePath: "",
+	cleanDistDir: true,
 	experimental: {
 		serverActions: {
 			allowedOrigins: [
@@ -11,6 +13,7 @@ const nextConfig: NextConfig = {
 			],
 		},
 	},
+	generateEtags: true,
 	images: {
 		remotePatterns: [
 			// Optimizely CMS
@@ -33,8 +36,10 @@ const nextConfig: NextConfig = {
 			},
 		],
 	},
-	productionBrowserSourceMaps: true,
+	poweredByHeader: false,
+
 	reactCompiler: true,
+	reactStrictMode: true,
 	transpilePackages: ["@t3-oss/env-nextjs", "@t3-oss/env-core"],
 };
 
