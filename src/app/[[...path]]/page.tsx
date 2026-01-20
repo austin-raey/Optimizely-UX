@@ -1,64 +1,50 @@
+import "server-only";
 import { createPage } from "@remkoj/optimizely-cms-nextjs/page";
-import { isDevelopment } from "@remkoj/optimizely-cms-react/rsc";
-import { AuthMode, createClient, IOptiGraphClient } from "@remkoj/optimizely-graph-client";
+import { createClient } from "@remkoj/optimizely-cms-nextjs/rsc";
+import { AuthMode } from "@remkoj/optimizely-graph-client";
 import { draftMode } from "next/headers";
 
-import { setupFactory } from "~/components/cms/factory";
-import { getContentByPath } from "~/gql/functions";
+import { factory } from "~/components/cms/factory";
 import { ACTIVE_CHANNEL } from "~/utils/cms/active-channel";
 
-const { CmsPage, generateMetadata, generateStaticParams } = createPage(setupFactory(), {
+/**
+ * Create the page component and Next.js functions to support static site generation,
+ * this ensures that the site has the highest possbible performance. This example uses
+ * a two-query approach in rendering any route:
+ * 1. Identify the content and type to render by path
+ * 2. Use the fragment or query from the component to fetch the data by ID
+ */
+const {
+	CmsPage: Page,
+	generateMetadata,
+	generateStaticParams,
+} = createPage(factory, {
+	/**
+	 * Configure the Web Application in the CMS that is bound to this installation
+	 */
 	channel: ACTIVE_CHANNEL,
+
 	/**
 	 * The factory to use to create the GraphQL Client to fetch data from Optimizely
-	 * CMS.
+	 * CMS. As this page is never used for preview, we're ignoring the first parameter.
 	 *
 	 * @returns     The Optimizely Graph Client
 	 */
-	async client(token?: string, mode?: "metadata" | "request"): Promise<IOptiGraphClient> {
-		// Create the actual graph client
-		const isDev = isDevelopment();
-		const client = createClient(undefined, token, {
-			cache: !isDev,
-			nextJsFetchDirectives: true,
-			queryCache: !isDev,
-		});
-
-		// Check if we're in request mode, if not the "draft mode" check will fail
-		if (mode == "request") {
-			const { isEnabled } = await draftMode();
-
-			// When draftmode is enabled, switch to common drafts
-			if (isEnabled) {
-				client.updateAuthentication(AuthMode.HMAC);
-				client.enablePreview();
-			}
+	client: async (_, scope) => {
+		const client = createClient();
+		if (scope === "request" && (await draftMode()).isEnabled) {
+			client.updateAuthentication(AuthMode.HMAC);
+			client.enablePreview();
 		}
 		return client;
 	},
-
-	/**
-	 * The demo site is single language, so we're always defaulting to English.
-	 * For a multi-lingual implementation, you may omit this parameters when you
-	 * have both a [lang] URL segment and define the channel. Otherwise implement
-	 * your own synchronous logic to get the initial locale based on the parameters.
-	 *
-	 * @returns     The initial locale
-	 */
-	//paramsToLocale: () => "en",
-
-	/**
-	 * Inject the "getContentByPath" master query that will be used to load all
-	 * content for the page in one request. When omitted, the default implementation
-	 * will revert to many requests in order to load the content.
-	 */
-	getContentByPath,
 });
+
 // Configure the Next.JS route handling for the pages
 export const dynamic = "error"; // Throw an error when the [[...path]] route becomes dynamic, as this will seriously hurt site performance
 export const dynamicParams = true; // Allow new pages to be resolved without rebuilding the site
-export const revalidate = false; // Keep the cache untill manually revalidated using the Webhook
-export const fetchCache = "default-cache"; // Cache fetch results by default
+export const revalidate = false; // Keep the cache untill manually revalidated using the Webhook, i.e. use SSG/ISR
 
+// Export page & helper methods
 export { generateMetadata, generateStaticParams };
-export default CmsPage;
+export default Page;

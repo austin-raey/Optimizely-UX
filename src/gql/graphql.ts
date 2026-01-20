@@ -164,7 +164,6 @@ export type ArticleListElementWhereInput = {
 
 export type AustinCarouselContainer = IData & _IComponent & _IContent & {
   __typename?: 'AustinCarouselContainer';
-  InternalName?: Maybe<Scalars['String']['output']>;
   IsAnimated?: Maybe<Scalars['Boolean']['output']>;
   Items?: Maybe<Array<Maybe<_IContent>>>;
   Variant?: Maybe<Scalars['String']['output']>;
@@ -315,34 +314,6 @@ export type AustinCarouselItemWhereInput = {
   _or?: InputMaybe<Array<InputMaybe<AustinCarouselItemWhereInput>>>;
 };
 
-export type AustinCustomRow = IData & _IComponent & _IContent & {
-  __typename?: 'AustinCustomRow';
-  ColumnOne?: Maybe<ContentReference>;
-  ColumnThree?: Maybe<ContentReference>;
-  ColumnTwo?: Maybe<ContentReference>;
-  ColumnsConfig?: Maybe<Scalars['String']['output']>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _json?: Maybe<Scalars['JSON']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type AustinCustomRow_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type AustinCustomRow_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
 export type AustinCustomRow2 = IData & _IComponent & _IContent & {
   __typename?: 'AustinCustomRow2';
   ColumnOne?: Maybe<Array<Maybe<_IContent>>>;
@@ -424,61 +395,6 @@ export type AustinCustomRow2WhereInput = {
   _modified?: InputMaybe<DateFilterInput>;
   _not?: InputMaybe<Array<InputMaybe<AustinCustomRow2WhereInput>>>;
   _or?: InputMaybe<Array<InputMaybe<AustinCustomRow2WhereInput>>>;
-};
-
-export type AustinCustomRowAutocomplete = {
-  __typename?: 'AustinCustomRowAutocomplete';
-  ColumnOne?: Maybe<ContentReferenceAutocomplete>;
-  ColumnThree?: Maybe<ContentReferenceAutocomplete>;
-  ColumnTwo?: Maybe<ContentReferenceAutocomplete>;
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type AustinCustomRowFacet = {
-  __typename?: 'AustinCustomRowFacet';
-  ColumnOne?: Maybe<ContentReferenceFacet>;
-  ColumnThree?: Maybe<ContentReferenceFacet>;
-  ColumnTwo?: Maybe<ContentReferenceFacet>;
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type AustinCustomRowOrderByInput = {
-  ColumnOne?: InputMaybe<ContentReferenceOrderByInput>;
-  ColumnThree?: InputMaybe<ContentReferenceOrderByInput>;
-  ColumnTwo?: InputMaybe<ContentReferenceOrderByInput>;
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type AustinCustomRowOutput = {
-  __typename?: 'AustinCustomRowOutput';
-  autocomplete?: Maybe<AustinCustomRowAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<AustinCustomRowFacet>;
-  item?: Maybe<AustinCustomRow>;
-  items?: Maybe<Array<Maybe<AustinCustomRow>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type AustinCustomRowOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type AustinCustomRowWhereInput = {
-  ColumnOne?: InputMaybe<ContentReferenceWhereInput>;
-  ColumnThree?: InputMaybe<ContentReferenceWhereInput>;
-  ColumnTwo?: InputMaybe<ContentReferenceWhereInput>;
-  _and?: InputMaybe<Array<InputMaybe<AustinCustomRowWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<AustinCustomRowWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<AustinCustomRowWhereInput>>>;
 };
 
 export type AustinLinkItem = IData & _IComponent & _IContent & {
@@ -709,79 +625,6 @@ export type AustinNavLinkGroupWhereInput = {
   _or?: InputMaybe<Array<InputMaybe<AustinNavLinkGroupWhereInput>>>;
 };
 
-export type AustinNavLinkItem = IData & _IComponent & _IContent & {
-  __typename?: 'AustinNavLinkItem';
-  Href?: Maybe<Link>;
-  Title?: Maybe<Scalars['String']['output']>;
-  /** @deprecated Use `_link` field instead */
-  _children?: Maybe<QueryRef>;
-  _deleted?: Maybe<Scalars['Bool']['output']>;
-  _fulltext?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  _id?: Maybe<Scalars['String']['output']>;
-  _json?: Maybe<Scalars['JSON']['output']>;
-  _link?: Maybe<QueryRef>;
-  _metadata?: Maybe<IContentMetadata>;
-  _modified?: Maybe<Scalars['Date']['output']>;
-  _score?: Maybe<Scalars['Float']['output']>;
-};
-
-
-export type AustinNavLinkItem_fulltextArgs = {
-  highlight?: InputMaybe<HighlightOptions>;
-};
-
-
-export type AustinNavLinkItem_linkArgs = {
-  type?: InputMaybe<LinkTypes>;
-};
-
-export type AustinNavLinkItemAutocomplete = {
-  __typename?: 'AustinNavLinkItemAutocomplete';
-  Href?: Maybe<LinkAutocomplete>;
-  _metadata?: Maybe<IContentMetadataAutocomplete>;
-};
-
-export type AustinNavLinkItemFacet = {
-  __typename?: 'AustinNavLinkItemFacet';
-  Href?: Maybe<LinkFacet>;
-  _metadata?: Maybe<IContentMetadataFacet>;
-};
-
-export type AustinNavLinkItemOrderByInput = {
-  Href?: InputMaybe<LinkOrderByInput>;
-  _metadata?: InputMaybe<IContentMetadataOrderByInput>;
-  _minimumScore?: InputMaybe<Scalars['Float']['input']>;
-  _modified?: InputMaybe<OrderBy>;
-  _ranking?: InputMaybe<Ranking>;
-  /** The value needs to be a positive value, but cannot exceed the maximum value of an integer. In case it is exceeded, the maximum of an integer is used. In case of a negative value, semantic search will be disabled. */
-  _semanticWeight?: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type AustinNavLinkItemOutput = {
-  __typename?: 'AustinNavLinkItemOutput';
-  autocomplete?: Maybe<AustinNavLinkItemAutocomplete>;
-  cursor?: Maybe<Scalars['String']['output']>;
-  facets?: Maybe<AustinNavLinkItemFacet>;
-  item?: Maybe<AustinNavLinkItem>;
-  items?: Maybe<Array<Maybe<AustinNavLinkItem>>>;
-  total?: Maybe<Scalars['Int']['output']>;
-};
-
-
-export type AustinNavLinkItemOutputtotalArgs = {
-  all?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type AustinNavLinkItemWhereInput = {
-  Href?: InputMaybe<LinkWhereInput>;
-  _and?: InputMaybe<Array<InputMaybe<AustinNavLinkItemWhereInput>>>;
-  _fulltext?: InputMaybe<SearchableStringFilterInput>;
-  _metadata?: InputMaybe<IContentMetadataWhereInput>;
-  _modified?: InputMaybe<DateFilterInput>;
-  _not?: InputMaybe<Array<InputMaybe<AustinNavLinkItemWhereInput>>>;
-  _or?: InputMaybe<Array<InputMaybe<AustinNavLinkItemWhereInput>>>;
-};
-
 export type AustinNavSubContainer = IData & _IComponent & _IContent & {
   __typename?: 'AustinNavSubContainer';
   Description?: Maybe<Scalars['String']['output']>;
@@ -932,8 +775,6 @@ export type AustinTestExperienceWhereInput = {
 export type AustinTestPageType = IData & _IContent & _IPage & {
   __typename?: 'AustinTestPageType';
   IsLander?: Maybe<Scalars['Boolean']['output']>;
-  NavRegion?: Maybe<_IContent>;
-  Navigation?: Maybe<_IContent>;
   PageContents?: Maybe<Array<Maybe<_IContent>>>;
   PageNavigation?: Maybe<_IContent>;
   /** @deprecated Use `_link` field instead */
@@ -1027,8 +868,6 @@ export type AustinTestPageType2WhereInput = {
 
 export type AustinTestPageTypeAutocomplete = {
   __typename?: 'AustinTestPageTypeAutocomplete';
-  NavRegion?: Maybe<_IContentAutocomplete>;
-  Navigation?: Maybe<_IContentAutocomplete>;
   PageContents?: Maybe<_IContentAutocomplete>;
   PageNavigation?: Maybe<_IContentAutocomplete>;
   _metadata?: Maybe<IContentMetadataAutocomplete>;
@@ -1036,16 +875,12 @@ export type AustinTestPageTypeAutocomplete = {
 
 export type AustinTestPageTypeFacet = {
   __typename?: 'AustinTestPageTypeFacet';
-  NavRegion?: Maybe<_IContentFacet>;
-  Navigation?: Maybe<_IContentFacet>;
   PageContents?: Maybe<_IContentFacet>;
   PageNavigation?: Maybe<_IContentFacet>;
   _metadata?: Maybe<IContentMetadataFacet>;
 };
 
 export type AustinTestPageTypeOrderByInput = {
-  NavRegion?: InputMaybe<_IContentOrderByInput>;
-  Navigation?: InputMaybe<_IContentOrderByInput>;
   PageContents?: InputMaybe<_IContentOrderByInput>;
   PageNavigation?: InputMaybe<_IContentOrderByInput>;
   _metadata?: InputMaybe<IContentMetadataOrderByInput>;
@@ -1072,8 +907,6 @@ export type AustinTestPageTypeOutputtotalArgs = {
 };
 
 export type AustinTestPageTypeWhereInput = {
-  NavRegion?: InputMaybe<_IContentWhereInput>;
-  Navigation?: InputMaybe<_IContentWhereInput>;
   PageContents?: InputMaybe<_IContentWhereInput>;
   PageNavigation?: InputMaybe<_IContentWhereInput>;
   _and?: InputMaybe<Array<InputMaybe<AustinTestPageTypeWhereInput>>>;
@@ -5465,12 +5298,10 @@ export type Query = {
   ArticleListElement?: Maybe<ArticleListElementOutput>;
   AustinCarouselContainer?: Maybe<AustinCarouselContainerOutput>;
   AustinCarouselItem?: Maybe<AustinCarouselItemOutput>;
-  AustinCustomRow?: Maybe<AustinCustomRowOutput>;
   AustinCustomRow2?: Maybe<AustinCustomRow2Output>;
   AustinLinkItem?: Maybe<AustinLinkItemOutput>;
   AustinNavContainer?: Maybe<AustinNavContainerOutput>;
   AustinNavLinkGroup?: Maybe<AustinNavLinkGroupOutput>;
-  AustinNavLinkItem?: Maybe<AustinNavLinkItemOutput>;
   AustinNavSubContainer?: Maybe<AustinNavSubContainerOutput>;
   AustinTestExperience?: Maybe<AustinTestExperienceOutput>;
   AustinTestPageType?: Maybe<AustinTestPageTypeOutput>;
@@ -5604,19 +5435,6 @@ export type QueryAustinCarouselItemArgs = {
 };
 
 
-export type QueryAustinCustomRowArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<AustinCustomRowOrderByInput>;
-  pinned?: InputMaybe<PinnedInput>;
-  skip?: Scalars['Int']['input'];
-  variation?: InputMaybe<VariationInput>;
-  where?: InputMaybe<AustinCustomRowWhereInput>;
-};
-
-
 export type QueryAustinCustomRow2Args = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -5666,19 +5484,6 @@ export type QueryAustinNavLinkGroupArgs = {
   skip?: Scalars['Int']['input'];
   variation?: InputMaybe<VariationInput>;
   where?: InputMaybe<AustinNavLinkGroupWhereInput>;
-};
-
-
-export type QueryAustinNavLinkItemArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<AustinNavLinkItemOrderByInput>;
-  pinned?: InputMaybe<PinnedInput>;
-  skip?: Scalars['Int']['input'];
-  variation?: InputMaybe<VariationInput>;
-  where?: InputMaybe<AustinNavLinkItemWhereInput>;
 };
 
 
@@ -6701,12 +6506,10 @@ export type QueryRef = {
   ArticleListElement?: Maybe<ArticleListElementOutput>;
   AustinCarouselContainer?: Maybe<AustinCarouselContainerOutput>;
   AustinCarouselItem?: Maybe<AustinCarouselItemOutput>;
-  AustinCustomRow?: Maybe<AustinCustomRowOutput>;
   AustinCustomRow2?: Maybe<AustinCustomRow2Output>;
   AustinLinkItem?: Maybe<AustinLinkItemOutput>;
   AustinNavContainer?: Maybe<AustinNavContainerOutput>;
   AustinNavLinkGroup?: Maybe<AustinNavLinkGroupOutput>;
-  AustinNavLinkItem?: Maybe<AustinNavLinkItemOutput>;
   AustinNavSubContainer?: Maybe<AustinNavSubContainerOutput>;
   AustinTestExperience?: Maybe<AustinTestExperienceOutput>;
   AustinTestPageType?: Maybe<AustinTestPageTypeOutput>;
@@ -6840,19 +6643,6 @@ export type QueryRefAustinCarouselItemArgs = {
 };
 
 
-export type QueryRefAustinCustomRowArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<AustinCustomRowOrderByInput>;
-  pinned?: InputMaybe<PinnedInput>;
-  skip?: Scalars['Int']['input'];
-  variation?: InputMaybe<VariationInput>;
-  where?: InputMaybe<AustinCustomRowWhereInput>;
-};
-
-
 export type QueryRefAustinCustomRow2Args = {
   cursor?: InputMaybe<Scalars['String']['input']>;
   ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -6902,19 +6692,6 @@ export type QueryRefAustinNavLinkGroupArgs = {
   skip?: Scalars['Int']['input'];
   variation?: InputMaybe<VariationInput>;
   where?: InputMaybe<AustinNavLinkGroupWhereInput>;
-};
-
-
-export type QueryRefAustinNavLinkItemArgs = {
-  cursor?: InputMaybe<Scalars['String']['input']>;
-  ids?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  limit?: Scalars['Int']['input'];
-  locale?: InputMaybe<Array<InputMaybe<Locales>>>;
-  orderBy?: InputMaybe<AustinNavLinkItemOrderByInput>;
-  pinned?: InputMaybe<PinnedInput>;
-  skip?: Scalars['Int']['input'];
-  variation?: InputMaybe<VariationInput>;
-  where?: InputMaybe<AustinNavLinkItemWhereInput>;
 };
 
 
@@ -13920,9 +13697,6 @@ export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentAr
     { __typename?: 'AustinCarouselItem' }
     & { ' $fragmentRefs'?: { 'BlockData_AustinCarouselItem_Fragment': BlockData_AustinCarouselItem_Fragment } }
   ) | (
-    { __typename?: 'AustinCustomRow' }
-    & { ' $fragmentRefs'?: { 'BlockData_AustinCustomRow_Fragment': BlockData_AustinCustomRow_Fragment } }
-  ) | (
     { __typename?: 'AustinCustomRow2' }
     & { ' $fragmentRefs'?: { 'BlockData_AustinCustomRow2_Fragment': BlockData_AustinCustomRow2_Fragment } }
   ) | (
@@ -13934,9 +13708,6 @@ export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentAr
   ) | (
     { __typename?: 'AustinNavLinkGroup' }
     & { ' $fragmentRefs'?: { 'BlockData_AustinNavLinkGroup_Fragment': BlockData_AustinNavLinkGroup_Fragment } }
-  ) | (
-    { __typename?: 'AustinNavLinkItem' }
-    & { ' $fragmentRefs'?: { 'BlockData_AustinNavLinkItem_Fragment': BlockData_AustinNavLinkItem_Fragment } }
   ) | (
     { __typename?: 'AustinNavSubContainer' }
     & { ' $fragmentRefs'?: { 'BlockData_AustinNavSubContainer_Fragment': BlockData_AustinNavSubContainer_Fragment } }
@@ -14052,9 +13823,6 @@ export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentAr
     { __typename?: 'AustinCarouselItem' }
     & { ' $fragmentRefs'?: { 'BlockData_AustinCarouselItem_Fragment': BlockData_AustinCarouselItem_Fragment } }
   ) | (
-    { __typename?: 'AustinCustomRow' }
-    & { ' $fragmentRefs'?: { 'BlockData_AustinCustomRow_Fragment': BlockData_AustinCustomRow_Fragment } }
-  ) | (
     { __typename?: 'AustinCustomRow2' }
     & { ' $fragmentRefs'?: { 'BlockData_AustinCustomRow2_Fragment': BlockData_AustinCustomRow2_Fragment } }
   ) | (
@@ -14066,9 +13834,6 @@ export type LandingPageDataFragment = { __typename?: 'LandingPage', TopContentAr
   ) | (
     { __typename?: 'AustinNavLinkGroup' }
     & { ' $fragmentRefs'?: { 'BlockData_AustinNavLinkGroup_Fragment': BlockData_AustinNavLinkGroup_Fragment } }
-  ) | (
-    { __typename?: 'AustinNavLinkItem' }
-    & { ' $fragmentRefs'?: { 'BlockData_AustinNavLinkItem_Fragment': BlockData_AustinNavLinkItem_Fragment } }
   ) | (
     { __typename?: 'AustinNavSubContainer' }
     & { ' $fragmentRefs'?: { 'BlockData_AustinNavSubContainer_Fragment': BlockData_AustinNavSubContainer_Fragment } }
@@ -14234,20 +13999,6 @@ type IContentData_AustinCarouselItem_Fragment = { __typename?: 'AustinCarouselIt
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_AustinCarouselItem_Fragment' };
 
-type IContentData_AustinCustomRow_Fragment = { __typename?: 'AustinCustomRow', _type: 'AustinCustomRow', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_AustinCustomRow_Fragment' };
-
 type IContentData_AustinCustomRow2_Fragment = { __typename?: 'AustinCustomRow2', _type: 'AustinCustomRow2', _metadata?: (
     { __typename?: 'ContentMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
@@ -14303,20 +14054,6 @@ type IContentData_AustinNavLinkGroup_Fragment = { __typename?: 'AustinNavLinkGro
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData_AustinNavLinkGroup_Fragment' };
-
-type IContentData_AustinNavLinkItem_Fragment = { __typename?: 'AustinNavLinkItem', _type: 'AustinNavLinkItem', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IContentData_AustinNavLinkItem_Fragment' };
 
 type IContentData_AustinNavSubContainer_Fragment = { __typename?: 'AustinNavSubContainer', _type: 'AustinNavSubContainer', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -15088,7 +14825,7 @@ type IContentData__Video_Fragment = { __typename?: '_Video', _type: '_Video', _m
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IContentData__Video_Fragment' };
 
-export type IContentDataFragment = IContentData_AnotherExperience_Fragment | IContentData_ArticleListElement_Fragment | IContentData_AustinCarouselContainer_Fragment | IContentData_AustinCarouselItem_Fragment | IContentData_AustinCustomRow_Fragment | IContentData_AustinCustomRow2_Fragment | IContentData_AustinLinkItem_Fragment | IContentData_AustinNavContainer_Fragment | IContentData_AustinNavLinkGroup_Fragment | IContentData_AustinNavLinkItem_Fragment | IContentData_AustinNavSubContainer_Fragment | IContentData_AustinTestExperience_Fragment | IContentData_AustinTestPageType_Fragment | IContentData_AustinTestPageType2_Fragment | IContentData_BlankExperience_Fragment | IContentData_BlankSection_Fragment | IContentData_BlogPostPage_Fragment | IContentData_BlogSectionExperience_Fragment | IContentData_ButtonBlock_Fragment | IContentData_CTAElement_Fragment | IContentData_CarouselBlock_Fragment | IContentData_ContentRecsElement_Fragment | IContentData_ContinueReadingComponent_Fragment | IContentData_DanOHellloWorld_Fragment | IContentData_GenericMedia_Fragment | IContentData_HeadingElement_Fragment | IContentData_HeroBlock_Fragment | IContentData_ImageElement_Fragment | IContentData_ImageMedia_Fragment | IContentData_LandingPage_Fragment | IContentData_LayoutSettingsBlock_Fragment | IContentData_LinkItem_Fragment | IContentData_MegaMenuGroupBlock_Fragment | IContentData_MenuNavigationBlock_Fragment | IContentData_NewPageTypeDemo_Fragment | IContentData_OdpEmbedBlock_Fragment | IContentData_OptiFormsChoiceElement_Fragment | IContentData_OptiFormsContainerData_Fragment | IContentData_OptiFormsNumberElement_Fragment | IContentData_OptiFormsRangeElement_Fragment | IContentData_OptiFormsResetElement_Fragment | IContentData_OptiFormsSelectionElement_Fragment | IContentData_OptiFormsSubmitElement_Fragment | IContentData_OptiFormsTextareaElement_Fragment | IContentData_OptiFormsTextboxElement_Fragment | IContentData_OptiFormsUrlElement_Fragment | IContentData_PageSeoSettings_Fragment | IContentData_ParagraphElement_Fragment | IContentData_QuoteBlock_Fragment | IContentData_RichTextElement_Fragment | IContentData_SysContentFolder_Fragment | IContentData_TestDemoExperience_Fragment | IContentData_TestimonialElement_Fragment | IContentData_TextBlock_Fragment | IContentData_VideoElement_Fragment | IContentData_VideoMedia_Fragment | IContentData__Component_Fragment | IContentData__Content_Fragment | IContentData__Experience_Fragment | IContentData__Folder_Fragment | IContentData__Image_Fragment | IContentData__Media_Fragment | IContentData__Page_Fragment | IContentData__Section_Fragment | IContentData__Video_Fragment;
+export type IContentDataFragment = IContentData_AnotherExperience_Fragment | IContentData_ArticleListElement_Fragment | IContentData_AustinCarouselContainer_Fragment | IContentData_AustinCarouselItem_Fragment | IContentData_AustinCustomRow2_Fragment | IContentData_AustinLinkItem_Fragment | IContentData_AustinNavContainer_Fragment | IContentData_AustinNavLinkGroup_Fragment | IContentData_AustinNavSubContainer_Fragment | IContentData_AustinTestExperience_Fragment | IContentData_AustinTestPageType_Fragment | IContentData_AustinTestPageType2_Fragment | IContentData_BlankExperience_Fragment | IContentData_BlankSection_Fragment | IContentData_BlogPostPage_Fragment | IContentData_BlogSectionExperience_Fragment | IContentData_ButtonBlock_Fragment | IContentData_CTAElement_Fragment | IContentData_CarouselBlock_Fragment | IContentData_ContentRecsElement_Fragment | IContentData_ContinueReadingComponent_Fragment | IContentData_DanOHellloWorld_Fragment | IContentData_GenericMedia_Fragment | IContentData_HeadingElement_Fragment | IContentData_HeroBlock_Fragment | IContentData_ImageElement_Fragment | IContentData_ImageMedia_Fragment | IContentData_LandingPage_Fragment | IContentData_LayoutSettingsBlock_Fragment | IContentData_LinkItem_Fragment | IContentData_MegaMenuGroupBlock_Fragment | IContentData_MenuNavigationBlock_Fragment | IContentData_NewPageTypeDemo_Fragment | IContentData_OdpEmbedBlock_Fragment | IContentData_OptiFormsChoiceElement_Fragment | IContentData_OptiFormsContainerData_Fragment | IContentData_OptiFormsNumberElement_Fragment | IContentData_OptiFormsRangeElement_Fragment | IContentData_OptiFormsResetElement_Fragment | IContentData_OptiFormsSelectionElement_Fragment | IContentData_OptiFormsSubmitElement_Fragment | IContentData_OptiFormsTextareaElement_Fragment | IContentData_OptiFormsTextboxElement_Fragment | IContentData_OptiFormsUrlElement_Fragment | IContentData_PageSeoSettings_Fragment | IContentData_ParagraphElement_Fragment | IContentData_QuoteBlock_Fragment | IContentData_RichTextElement_Fragment | IContentData_SysContentFolder_Fragment | IContentData_TestDemoExperience_Fragment | IContentData_TestimonialElement_Fragment | IContentData_TextBlock_Fragment | IContentData_VideoElement_Fragment | IContentData_VideoMedia_Fragment | IContentData__Component_Fragment | IContentData__Content_Fragment | IContentData__Experience_Fragment | IContentData__Folder_Fragment | IContentData__Image_Fragment | IContentData__Media_Fragment | IContentData__Page_Fragment | IContentData__Section_Fragment | IContentData__Video_Fragment;
 
 type IElementData_ArticleListElement_Fragment = { __typename?: 'ArticleListElement', _type: 'ArticleListElement', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -15131,20 +14868,6 @@ type IElementData_AustinCarouselItem_Fragment = { __typename?: 'AustinCarouselIt
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IElementData_AustinCarouselItem_Fragment' };
-
-type IElementData_AustinCustomRow_Fragment = { __typename?: 'AustinCustomRow', _type: 'AustinCustomRow', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IElementData_AustinCustomRow_Fragment' };
 
 type IElementData_AustinCustomRow2_Fragment = { __typename?: 'AustinCustomRow2', _type: 'AustinCustomRow2', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -15201,20 +14924,6 @@ type IElementData_AustinNavLinkGroup_Fragment = { __typename?: 'AustinNavLinkGro
     { __typename?: 'MediaMetadata' }
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IElementData_AustinNavLinkGroup_Fragment' };
-
-type IElementData_AustinNavLinkItem_Fragment = { __typename?: 'AustinNavLinkItem', _type: 'AustinNavLinkItem', _metadata?: (
-    { __typename?: 'ContentMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ContentMetadata_Fragment': IContentInfo_ContentMetadata_Fragment } }
-  ) | (
-    { __typename?: 'InstanceMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_InstanceMetadata_Fragment': IContentInfo_InstanceMetadata_Fragment } }
-  ) | (
-    { __typename?: 'ItemMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_ItemMetadata_Fragment': IContentInfo_ItemMetadata_Fragment } }
-  ) | (
-    { __typename?: 'MediaMetadata' }
-    & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
-  ) | null } & { ' $fragmentName'?: 'IElementData_AustinNavLinkItem_Fragment' };
 
 type IElementData_AustinNavSubContainer_Fragment = { __typename?: 'AustinNavSubContainer', _type: 'AustinNavSubContainer', _metadata?: (
     { __typename?: 'ContentMetadata' }
@@ -15706,7 +15415,7 @@ type IElementData__Section_Fragment = { __typename?: '_Section', _type: '_Sectio
     & { ' $fragmentRefs'?: { 'IContentInfo_MediaMetadata_Fragment': IContentInfo_MediaMetadata_Fragment } }
   ) | null } & { ' $fragmentName'?: 'IElementData__Section_Fragment' };
 
-export type IElementDataFragment = IElementData_ArticleListElement_Fragment | IElementData_AustinCarouselContainer_Fragment | IElementData_AustinCarouselItem_Fragment | IElementData_AustinCustomRow_Fragment | IElementData_AustinCustomRow2_Fragment | IElementData_AustinLinkItem_Fragment | IElementData_AustinNavContainer_Fragment | IElementData_AustinNavLinkGroup_Fragment | IElementData_AustinNavLinkItem_Fragment | IElementData_AustinNavSubContainer_Fragment | IElementData_BlankSection_Fragment | IElementData_ButtonBlock_Fragment | IElementData_CTAElement_Fragment | IElementData_CarouselBlock_Fragment | IElementData_ContentRecsElement_Fragment | IElementData_ContinueReadingComponent_Fragment | IElementData_DanOHellloWorld_Fragment | IElementData_HeadingElement_Fragment | IElementData_HeroBlock_Fragment | IElementData_ImageElement_Fragment | IElementData_LayoutSettingsBlock_Fragment | IElementData_LinkItem_Fragment | IElementData_MegaMenuGroupBlock_Fragment | IElementData_MenuNavigationBlock_Fragment | IElementData_OdpEmbedBlock_Fragment | IElementData_OptiFormsChoiceElement_Fragment | IElementData_OptiFormsContainerData_Fragment | IElementData_OptiFormsNumberElement_Fragment | IElementData_OptiFormsRangeElement_Fragment | IElementData_OptiFormsResetElement_Fragment | IElementData_OptiFormsSelectionElement_Fragment | IElementData_OptiFormsSubmitElement_Fragment | IElementData_OptiFormsTextareaElement_Fragment | IElementData_OptiFormsTextboxElement_Fragment | IElementData_OptiFormsUrlElement_Fragment | IElementData_PageSeoSettings_Fragment | IElementData_ParagraphElement_Fragment | IElementData_QuoteBlock_Fragment | IElementData_RichTextElement_Fragment | IElementData_TestimonialElement_Fragment | IElementData_TextBlock_Fragment | IElementData_VideoElement_Fragment | IElementData__Component_Fragment | IElementData__Section_Fragment;
+export type IElementDataFragment = IElementData_ArticleListElement_Fragment | IElementData_AustinCarouselContainer_Fragment | IElementData_AustinCarouselItem_Fragment | IElementData_AustinCustomRow2_Fragment | IElementData_AustinLinkItem_Fragment | IElementData_AustinNavContainer_Fragment | IElementData_AustinNavLinkGroup_Fragment | IElementData_AustinNavSubContainer_Fragment | IElementData_BlankSection_Fragment | IElementData_ButtonBlock_Fragment | IElementData_CTAElement_Fragment | IElementData_CarouselBlock_Fragment | IElementData_ContentRecsElement_Fragment | IElementData_ContinueReadingComponent_Fragment | IElementData_DanOHellloWorld_Fragment | IElementData_HeadingElement_Fragment | IElementData_HeroBlock_Fragment | IElementData_ImageElement_Fragment | IElementData_LayoutSettingsBlock_Fragment | IElementData_LinkItem_Fragment | IElementData_MegaMenuGroupBlock_Fragment | IElementData_MenuNavigationBlock_Fragment | IElementData_OdpEmbedBlock_Fragment | IElementData_OptiFormsChoiceElement_Fragment | IElementData_OptiFormsContainerData_Fragment | IElementData_OptiFormsNumberElement_Fragment | IElementData_OptiFormsRangeElement_Fragment | IElementData_OptiFormsResetElement_Fragment | IElementData_OptiFormsSelectionElement_Fragment | IElementData_OptiFormsSubmitElement_Fragment | IElementData_OptiFormsTextareaElement_Fragment | IElementData_OptiFormsTextboxElement_Fragment | IElementData_OptiFormsUrlElement_Fragment | IElementData_PageSeoSettings_Fragment | IElementData_ParagraphElement_Fragment | IElementData_QuoteBlock_Fragment | IElementData_RichTextElement_Fragment | IElementData_TestimonialElement_Fragment | IElementData_TextBlock_Fragment | IElementData_VideoElement_Fragment | IElementData__Component_Fragment | IElementData__Section_Fragment;
 
 type ElementData_ArticleListElement_Fragment = (
   { __typename?: 'ArticleListElement' }
@@ -15722,11 +15431,6 @@ type ElementData_AustinCarouselItem_Fragment = (
   { __typename?: 'AustinCarouselItem' }
   & { ' $fragmentRefs'?: { 'IElementData_AustinCarouselItem_Fragment': IElementData_AustinCarouselItem_Fragment } }
 ) & { ' $fragmentName'?: 'ElementData_AustinCarouselItem_Fragment' };
-
-type ElementData_AustinCustomRow_Fragment = (
-  { __typename?: 'AustinCustomRow' }
-  & { ' $fragmentRefs'?: { 'IElementData_AustinCustomRow_Fragment': IElementData_AustinCustomRow_Fragment } }
-) & { ' $fragmentName'?: 'ElementData_AustinCustomRow_Fragment' };
 
 type ElementData_AustinCustomRow2_Fragment = (
   { __typename?: 'AustinCustomRow2' }
@@ -15747,11 +15451,6 @@ type ElementData_AustinNavLinkGroup_Fragment = (
   { __typename?: 'AustinNavLinkGroup' }
   & { ' $fragmentRefs'?: { 'IElementData_AustinNavLinkGroup_Fragment': IElementData_AustinNavLinkGroup_Fragment } }
 ) & { ' $fragmentName'?: 'ElementData_AustinNavLinkGroup_Fragment' };
-
-type ElementData_AustinNavLinkItem_Fragment = (
-  { __typename?: 'AustinNavLinkItem' }
-  & { ' $fragmentRefs'?: { 'IElementData_AustinNavLinkItem_Fragment': IElementData_AustinNavLinkItem_Fragment } }
-) & { ' $fragmentName'?: 'ElementData_AustinNavLinkItem_Fragment' };
 
 type ElementData_AustinNavSubContainer_Fragment = (
   { __typename?: 'AustinNavSubContainer' }
@@ -15928,7 +15627,7 @@ type ElementData__Section_Fragment = (
   & { ' $fragmentRefs'?: { 'IElementData__Section_Fragment': IElementData__Section_Fragment } }
 ) & { ' $fragmentName'?: 'ElementData__Section_Fragment' };
 
-export type ElementDataFragment = ElementData_ArticleListElement_Fragment | ElementData_AustinCarouselContainer_Fragment | ElementData_AustinCarouselItem_Fragment | ElementData_AustinCustomRow_Fragment | ElementData_AustinCustomRow2_Fragment | ElementData_AustinLinkItem_Fragment | ElementData_AustinNavContainer_Fragment | ElementData_AustinNavLinkGroup_Fragment | ElementData_AustinNavLinkItem_Fragment | ElementData_AustinNavSubContainer_Fragment | ElementData_BlankSection_Fragment | ElementData_ButtonBlock_Fragment | ElementData_CTAElement_Fragment | ElementData_CarouselBlock_Fragment | ElementData_ContentRecsElement_Fragment | ElementData_ContinueReadingComponent_Fragment | ElementData_DanOHellloWorld_Fragment | ElementData_HeadingElement_Fragment | ElementData_HeroBlock_Fragment | ElementData_ImageElement_Fragment | ElementData_LayoutSettingsBlock_Fragment | ElementData_LinkItem_Fragment | ElementData_MegaMenuGroupBlock_Fragment | ElementData_MenuNavigationBlock_Fragment | ElementData_OdpEmbedBlock_Fragment | ElementData_OptiFormsChoiceElement_Fragment | ElementData_OptiFormsContainerData_Fragment | ElementData_OptiFormsNumberElement_Fragment | ElementData_OptiFormsRangeElement_Fragment | ElementData_OptiFormsResetElement_Fragment | ElementData_OptiFormsSelectionElement_Fragment | ElementData_OptiFormsSubmitElement_Fragment | ElementData_OptiFormsTextareaElement_Fragment | ElementData_OptiFormsTextboxElement_Fragment | ElementData_OptiFormsUrlElement_Fragment | ElementData_PageSeoSettings_Fragment | ElementData_ParagraphElement_Fragment | ElementData_QuoteBlock_Fragment | ElementData_RichTextElement_Fragment | ElementData_TestimonialElement_Fragment | ElementData_TextBlock_Fragment | ElementData_VideoElement_Fragment | ElementData__Component_Fragment | ElementData__Section_Fragment;
+export type ElementDataFragment = ElementData_ArticleListElement_Fragment | ElementData_AustinCarouselContainer_Fragment | ElementData_AustinCarouselItem_Fragment | ElementData_AustinCustomRow2_Fragment | ElementData_AustinLinkItem_Fragment | ElementData_AustinNavContainer_Fragment | ElementData_AustinNavLinkGroup_Fragment | ElementData_AustinNavSubContainer_Fragment | ElementData_BlankSection_Fragment | ElementData_ButtonBlock_Fragment | ElementData_CTAElement_Fragment | ElementData_CarouselBlock_Fragment | ElementData_ContentRecsElement_Fragment | ElementData_ContinueReadingComponent_Fragment | ElementData_DanOHellloWorld_Fragment | ElementData_HeadingElement_Fragment | ElementData_HeroBlock_Fragment | ElementData_ImageElement_Fragment | ElementData_LayoutSettingsBlock_Fragment | ElementData_LinkItem_Fragment | ElementData_MegaMenuGroupBlock_Fragment | ElementData_MenuNavigationBlock_Fragment | ElementData_OdpEmbedBlock_Fragment | ElementData_OptiFormsChoiceElement_Fragment | ElementData_OptiFormsContainerData_Fragment | ElementData_OptiFormsNumberElement_Fragment | ElementData_OptiFormsRangeElement_Fragment | ElementData_OptiFormsResetElement_Fragment | ElementData_OptiFormsSelectionElement_Fragment | ElementData_OptiFormsSubmitElement_Fragment | ElementData_OptiFormsTextareaElement_Fragment | ElementData_OptiFormsTextboxElement_Fragment | ElementData_OptiFormsUrlElement_Fragment | ElementData_PageSeoSettings_Fragment | ElementData_ParagraphElement_Fragment | ElementData_QuoteBlock_Fragment | ElementData_RichTextElement_Fragment | ElementData_TestimonialElement_Fragment | ElementData_TextBlock_Fragment | ElementData_VideoElement_Fragment | ElementData__Component_Fragment | ElementData__Section_Fragment;
 
 type BlockData_ArticleListElement_Fragment = (
   { __typename?: 'ArticleListElement' }
@@ -15944,11 +15643,6 @@ type BlockData_AustinCarouselItem_Fragment = (
   { __typename?: 'AustinCarouselItem' }
   & { ' $fragmentRefs'?: { 'IContentData_AustinCarouselItem_Fragment': IContentData_AustinCarouselItem_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData_AustinCarouselItem_Fragment' };
-
-type BlockData_AustinCustomRow_Fragment = (
-  { __typename?: 'AustinCustomRow' }
-  & { ' $fragmentRefs'?: { 'IContentData_AustinCustomRow_Fragment': IContentData_AustinCustomRow_Fragment } }
-) & { ' $fragmentName'?: 'BlockData_AustinCustomRow_Fragment' };
 
 type BlockData_AustinCustomRow2_Fragment = (
   { __typename?: 'AustinCustomRow2' }
@@ -15969,11 +15663,6 @@ type BlockData_AustinNavLinkGroup_Fragment = (
   { __typename?: 'AustinNavLinkGroup' }
   & { ' $fragmentRefs'?: { 'IContentData_AustinNavLinkGroup_Fragment': IContentData_AustinNavLinkGroup_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData_AustinNavLinkGroup_Fragment' };
-
-type BlockData_AustinNavLinkItem_Fragment = (
-  { __typename?: 'AustinNavLinkItem' }
-  & { ' $fragmentRefs'?: { 'IContentData_AustinNavLinkItem_Fragment': IContentData_AustinNavLinkItem_Fragment } }
-) & { ' $fragmentName'?: 'BlockData_AustinNavLinkItem_Fragment' };
 
 type BlockData_AustinNavSubContainer_Fragment = (
   { __typename?: 'AustinNavSubContainer' }
@@ -16150,7 +15839,7 @@ type BlockData__Section_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData__Section_Fragment': IContentData__Section_Fragment } }
 ) & { ' $fragmentName'?: 'BlockData__Section_Fragment' };
 
-export type BlockDataFragment = BlockData_ArticleListElement_Fragment | BlockData_AustinCarouselContainer_Fragment | BlockData_AustinCarouselItem_Fragment | BlockData_AustinCustomRow_Fragment | BlockData_AustinCustomRow2_Fragment | BlockData_AustinLinkItem_Fragment | BlockData_AustinNavContainer_Fragment | BlockData_AustinNavLinkGroup_Fragment | BlockData_AustinNavLinkItem_Fragment | BlockData_AustinNavSubContainer_Fragment | BlockData_BlankSection_Fragment | BlockData_ButtonBlock_Fragment | BlockData_CTAElement_Fragment | BlockData_CarouselBlock_Fragment | BlockData_ContentRecsElement_Fragment | BlockData_ContinueReadingComponent_Fragment | BlockData_DanOHellloWorld_Fragment | BlockData_HeadingElement_Fragment | BlockData_HeroBlock_Fragment | BlockData_ImageElement_Fragment | BlockData_LayoutSettingsBlock_Fragment | BlockData_LinkItem_Fragment | BlockData_MegaMenuGroupBlock_Fragment | BlockData_MenuNavigationBlock_Fragment | BlockData_OdpEmbedBlock_Fragment | BlockData_OptiFormsChoiceElement_Fragment | BlockData_OptiFormsContainerData_Fragment | BlockData_OptiFormsNumberElement_Fragment | BlockData_OptiFormsRangeElement_Fragment | BlockData_OptiFormsResetElement_Fragment | BlockData_OptiFormsSelectionElement_Fragment | BlockData_OptiFormsSubmitElement_Fragment | BlockData_OptiFormsTextareaElement_Fragment | BlockData_OptiFormsTextboxElement_Fragment | BlockData_OptiFormsUrlElement_Fragment | BlockData_PageSeoSettings_Fragment | BlockData_ParagraphElement_Fragment | BlockData_QuoteBlock_Fragment | BlockData_RichTextElement_Fragment | BlockData_TestimonialElement_Fragment | BlockData_TextBlock_Fragment | BlockData_VideoElement_Fragment | BlockData__Component_Fragment | BlockData__Section_Fragment;
+export type BlockDataFragment = BlockData_ArticleListElement_Fragment | BlockData_AustinCarouselContainer_Fragment | BlockData_AustinCarouselItem_Fragment | BlockData_AustinCustomRow2_Fragment | BlockData_AustinLinkItem_Fragment | BlockData_AustinNavContainer_Fragment | BlockData_AustinNavLinkGroup_Fragment | BlockData_AustinNavSubContainer_Fragment | BlockData_BlankSection_Fragment | BlockData_ButtonBlock_Fragment | BlockData_CTAElement_Fragment | BlockData_CarouselBlock_Fragment | BlockData_ContentRecsElement_Fragment | BlockData_ContinueReadingComponent_Fragment | BlockData_DanOHellloWorld_Fragment | BlockData_HeadingElement_Fragment | BlockData_HeroBlock_Fragment | BlockData_ImageElement_Fragment | BlockData_LayoutSettingsBlock_Fragment | BlockData_LinkItem_Fragment | BlockData_MegaMenuGroupBlock_Fragment | BlockData_MenuNavigationBlock_Fragment | BlockData_OdpEmbedBlock_Fragment | BlockData_OptiFormsChoiceElement_Fragment | BlockData_OptiFormsContainerData_Fragment | BlockData_OptiFormsNumberElement_Fragment | BlockData_OptiFormsRangeElement_Fragment | BlockData_OptiFormsResetElement_Fragment | BlockData_OptiFormsSelectionElement_Fragment | BlockData_OptiFormsSubmitElement_Fragment | BlockData_OptiFormsTextareaElement_Fragment | BlockData_OptiFormsTextboxElement_Fragment | BlockData_OptiFormsUrlElement_Fragment | BlockData_PageSeoSettings_Fragment | BlockData_ParagraphElement_Fragment | BlockData_QuoteBlock_Fragment | BlockData_RichTextElement_Fragment | BlockData_TestimonialElement_Fragment | BlockData_TextBlock_Fragment | BlockData_VideoElement_Fragment | BlockData__Component_Fragment | BlockData__Section_Fragment;
 
 type PageData_AnotherExperience_Fragment = (
   { __typename?: 'AnotherExperience' }
@@ -16172,11 +15861,6 @@ type PageData_AustinCarouselItem_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_AustinCarouselItem_Fragment': IContentData_AustinCarouselItem_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_AustinCarouselItem_Fragment' };
 
-type PageData_AustinCustomRow_Fragment = (
-  { __typename?: 'AustinCustomRow' }
-  & { ' $fragmentRefs'?: { 'IContentData_AustinCustomRow_Fragment': IContentData_AustinCustomRow_Fragment } }
-) & { ' $fragmentName'?: 'PageData_AustinCustomRow_Fragment' };
-
 type PageData_AustinCustomRow2_Fragment = (
   { __typename?: 'AustinCustomRow2' }
   & { ' $fragmentRefs'?: { 'IContentData_AustinCustomRow2_Fragment': IContentData_AustinCustomRow2_Fragment } }
@@ -16196,11 +15880,6 @@ type PageData_AustinNavLinkGroup_Fragment = (
   { __typename?: 'AustinNavLinkGroup' }
   & { ' $fragmentRefs'?: { 'IContentData_AustinNavLinkGroup_Fragment': IContentData_AustinNavLinkGroup_Fragment } }
 ) & { ' $fragmentName'?: 'PageData_AustinNavLinkGroup_Fragment' };
-
-type PageData_AustinNavLinkItem_Fragment = (
-  { __typename?: 'AustinNavLinkItem' }
-  & { ' $fragmentRefs'?: { 'IContentData_AustinNavLinkItem_Fragment': IContentData_AustinNavLinkItem_Fragment } }
-) & { ' $fragmentName'?: 'PageData_AustinNavLinkItem_Fragment' };
 
 type PageData_AustinNavSubContainer_Fragment = (
   { __typename?: 'AustinNavSubContainer' }
@@ -16477,7 +16156,7 @@ type PageData__Video_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData__Video_Fragment': IContentData__Video_Fragment } }
 ) & { ' $fragmentName'?: 'PageData__Video_Fragment' };
 
-export type PageDataFragment = PageData_AnotherExperience_Fragment | PageData_ArticleListElement_Fragment | PageData_AustinCarouselContainer_Fragment | PageData_AustinCarouselItem_Fragment | PageData_AustinCustomRow_Fragment | PageData_AustinCustomRow2_Fragment | PageData_AustinLinkItem_Fragment | PageData_AustinNavContainer_Fragment | PageData_AustinNavLinkGroup_Fragment | PageData_AustinNavLinkItem_Fragment | PageData_AustinNavSubContainer_Fragment | PageData_AustinTestExperience_Fragment | PageData_AustinTestPageType_Fragment | PageData_AustinTestPageType2_Fragment | PageData_BlankExperience_Fragment | PageData_BlankSection_Fragment | PageData_BlogPostPage_Fragment | PageData_BlogSectionExperience_Fragment | PageData_ButtonBlock_Fragment | PageData_CTAElement_Fragment | PageData_CarouselBlock_Fragment | PageData_ContentRecsElement_Fragment | PageData_ContinueReadingComponent_Fragment | PageData_DanOHellloWorld_Fragment | PageData_GenericMedia_Fragment | PageData_HeadingElement_Fragment | PageData_HeroBlock_Fragment | PageData_ImageElement_Fragment | PageData_ImageMedia_Fragment | PageData_LandingPage_Fragment | PageData_LayoutSettingsBlock_Fragment | PageData_LinkItem_Fragment | PageData_MegaMenuGroupBlock_Fragment | PageData_MenuNavigationBlock_Fragment | PageData_NewPageTypeDemo_Fragment | PageData_OdpEmbedBlock_Fragment | PageData_OptiFormsChoiceElement_Fragment | PageData_OptiFormsContainerData_Fragment | PageData_OptiFormsNumberElement_Fragment | PageData_OptiFormsRangeElement_Fragment | PageData_OptiFormsResetElement_Fragment | PageData_OptiFormsSelectionElement_Fragment | PageData_OptiFormsSubmitElement_Fragment | PageData_OptiFormsTextareaElement_Fragment | PageData_OptiFormsTextboxElement_Fragment | PageData_OptiFormsUrlElement_Fragment | PageData_PageSeoSettings_Fragment | PageData_ParagraphElement_Fragment | PageData_QuoteBlock_Fragment | PageData_RichTextElement_Fragment | PageData_SysContentFolder_Fragment | PageData_TestDemoExperience_Fragment | PageData_TestimonialElement_Fragment | PageData_TextBlock_Fragment | PageData_VideoElement_Fragment | PageData_VideoMedia_Fragment | PageData__Component_Fragment | PageData__Content_Fragment | PageData__Experience_Fragment | PageData__Folder_Fragment | PageData__Image_Fragment | PageData__Media_Fragment | PageData__Page_Fragment | PageData__Section_Fragment | PageData__Video_Fragment;
+export type PageDataFragment = PageData_AnotherExperience_Fragment | PageData_ArticleListElement_Fragment | PageData_AustinCarouselContainer_Fragment | PageData_AustinCarouselItem_Fragment | PageData_AustinCustomRow2_Fragment | PageData_AustinLinkItem_Fragment | PageData_AustinNavContainer_Fragment | PageData_AustinNavLinkGroup_Fragment | PageData_AustinNavSubContainer_Fragment | PageData_AustinTestExperience_Fragment | PageData_AustinTestPageType_Fragment | PageData_AustinTestPageType2_Fragment | PageData_BlankExperience_Fragment | PageData_BlankSection_Fragment | PageData_BlogPostPage_Fragment | PageData_BlogSectionExperience_Fragment | PageData_ButtonBlock_Fragment | PageData_CTAElement_Fragment | PageData_CarouselBlock_Fragment | PageData_ContentRecsElement_Fragment | PageData_ContinueReadingComponent_Fragment | PageData_DanOHellloWorld_Fragment | PageData_GenericMedia_Fragment | PageData_HeadingElement_Fragment | PageData_HeroBlock_Fragment | PageData_ImageElement_Fragment | PageData_ImageMedia_Fragment | PageData_LandingPage_Fragment | PageData_LayoutSettingsBlock_Fragment | PageData_LinkItem_Fragment | PageData_MegaMenuGroupBlock_Fragment | PageData_MenuNavigationBlock_Fragment | PageData_NewPageTypeDemo_Fragment | PageData_OdpEmbedBlock_Fragment | PageData_OptiFormsChoiceElement_Fragment | PageData_OptiFormsContainerData_Fragment | PageData_OptiFormsNumberElement_Fragment | PageData_OptiFormsRangeElement_Fragment | PageData_OptiFormsResetElement_Fragment | PageData_OptiFormsSelectionElement_Fragment | PageData_OptiFormsSubmitElement_Fragment | PageData_OptiFormsTextareaElement_Fragment | PageData_OptiFormsTextboxElement_Fragment | PageData_OptiFormsUrlElement_Fragment | PageData_PageSeoSettings_Fragment | PageData_ParagraphElement_Fragment | PageData_QuoteBlock_Fragment | PageData_RichTextElement_Fragment | PageData_SysContentFolder_Fragment | PageData_TestDemoExperience_Fragment | PageData_TestimonialElement_Fragment | PageData_TextBlock_Fragment | PageData_VideoElement_Fragment | PageData_VideoMedia_Fragment | PageData__Component_Fragment | PageData__Content_Fragment | PageData__Experience_Fragment | PageData__Folder_Fragment | PageData__Image_Fragment | PageData__Media_Fragment | PageData__Page_Fragment | PageData__Section_Fragment | PageData__Video_Fragment;
 
 export type LinkDataFragment = { __typename?: 'ContentUrl', type?: string | null, base?: string | null, default?: string | null } & { ' $fragmentName'?: 'LinkDataFragment' };
 
@@ -16528,11 +16207,6 @@ type IContentListItem_AustinCarouselItem_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData_AustinCarouselItem_Fragment': IContentData_AustinCarouselItem_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_AustinCarouselItem_Fragment' };
 
-type IContentListItem_AustinCustomRow_Fragment = (
-  { __typename?: 'AustinCustomRow' }
-  & { ' $fragmentRefs'?: { 'IContentData_AustinCustomRow_Fragment': IContentData_AustinCustomRow_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_AustinCustomRow_Fragment' };
-
 type IContentListItem_AustinCustomRow2_Fragment = (
   { __typename?: 'AustinCustomRow2' }
   & { ' $fragmentRefs'?: { 'IContentData_AustinCustomRow2_Fragment': IContentData_AustinCustomRow2_Fragment } }
@@ -16552,11 +16226,6 @@ type IContentListItem_AustinNavLinkGroup_Fragment = (
   { __typename?: 'AustinNavLinkGroup' }
   & { ' $fragmentRefs'?: { 'IContentData_AustinNavLinkGroup_Fragment': IContentData_AustinNavLinkGroup_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem_AustinNavLinkGroup_Fragment' };
-
-type IContentListItem_AustinNavLinkItem_Fragment = (
-  { __typename?: 'AustinNavLinkItem' }
-  & { ' $fragmentRefs'?: { 'IContentData_AustinNavLinkItem_Fragment': IContentData_AustinNavLinkItem_Fragment } }
-) & { ' $fragmentName'?: 'IContentListItem_AustinNavLinkItem_Fragment' };
 
 type IContentListItem_AustinNavSubContainer_Fragment = (
   { __typename?: 'AustinNavSubContainer' }
@@ -16833,7 +16502,7 @@ type IContentListItem__Video_Fragment = (
   & { ' $fragmentRefs'?: { 'IContentData__Video_Fragment': IContentData__Video_Fragment } }
 ) & { ' $fragmentName'?: 'IContentListItem__Video_Fragment' };
 
-export type IContentListItemFragment = IContentListItem_AnotherExperience_Fragment | IContentListItem_ArticleListElement_Fragment | IContentListItem_AustinCarouselContainer_Fragment | IContentListItem_AustinCarouselItem_Fragment | IContentListItem_AustinCustomRow_Fragment | IContentListItem_AustinCustomRow2_Fragment | IContentListItem_AustinLinkItem_Fragment | IContentListItem_AustinNavContainer_Fragment | IContentListItem_AustinNavLinkGroup_Fragment | IContentListItem_AustinNavLinkItem_Fragment | IContentListItem_AustinNavSubContainer_Fragment | IContentListItem_AustinTestExperience_Fragment | IContentListItem_AustinTestPageType_Fragment | IContentListItem_AustinTestPageType2_Fragment | IContentListItem_BlankExperience_Fragment | IContentListItem_BlankSection_Fragment | IContentListItem_BlogPostPage_Fragment | IContentListItem_BlogSectionExperience_Fragment | IContentListItem_ButtonBlock_Fragment | IContentListItem_CTAElement_Fragment | IContentListItem_CarouselBlock_Fragment | IContentListItem_ContentRecsElement_Fragment | IContentListItem_ContinueReadingComponent_Fragment | IContentListItem_DanOHellloWorld_Fragment | IContentListItem_GenericMedia_Fragment | IContentListItem_HeadingElement_Fragment | IContentListItem_HeroBlock_Fragment | IContentListItem_ImageElement_Fragment | IContentListItem_ImageMedia_Fragment | IContentListItem_LandingPage_Fragment | IContentListItem_LayoutSettingsBlock_Fragment | IContentListItem_LinkItem_Fragment | IContentListItem_MegaMenuGroupBlock_Fragment | IContentListItem_MenuNavigationBlock_Fragment | IContentListItem_NewPageTypeDemo_Fragment | IContentListItem_OdpEmbedBlock_Fragment | IContentListItem_OptiFormsChoiceElement_Fragment | IContentListItem_OptiFormsContainerData_Fragment | IContentListItem_OptiFormsNumberElement_Fragment | IContentListItem_OptiFormsRangeElement_Fragment | IContentListItem_OptiFormsResetElement_Fragment | IContentListItem_OptiFormsSelectionElement_Fragment | IContentListItem_OptiFormsSubmitElement_Fragment | IContentListItem_OptiFormsTextareaElement_Fragment | IContentListItem_OptiFormsTextboxElement_Fragment | IContentListItem_OptiFormsUrlElement_Fragment | IContentListItem_PageSeoSettings_Fragment | IContentListItem_ParagraphElement_Fragment | IContentListItem_QuoteBlock_Fragment | IContentListItem_RichTextElement_Fragment | IContentListItem_SysContentFolder_Fragment | IContentListItem_TestDemoExperience_Fragment | IContentListItem_TestimonialElement_Fragment | IContentListItem_TextBlock_Fragment | IContentListItem_VideoElement_Fragment | IContentListItem_VideoMedia_Fragment | IContentListItem__Component_Fragment | IContentListItem__Content_Fragment | IContentListItem__Experience_Fragment | IContentListItem__Folder_Fragment | IContentListItem__Image_Fragment | IContentListItem__Media_Fragment | IContentListItem__Page_Fragment | IContentListItem__Section_Fragment | IContentListItem__Video_Fragment;
+export type IContentListItemFragment = IContentListItem_AnotherExperience_Fragment | IContentListItem_ArticleListElement_Fragment | IContentListItem_AustinCarouselContainer_Fragment | IContentListItem_AustinCarouselItem_Fragment | IContentListItem_AustinCustomRow2_Fragment | IContentListItem_AustinLinkItem_Fragment | IContentListItem_AustinNavContainer_Fragment | IContentListItem_AustinNavLinkGroup_Fragment | IContentListItem_AustinNavSubContainer_Fragment | IContentListItem_AustinTestExperience_Fragment | IContentListItem_AustinTestPageType_Fragment | IContentListItem_AustinTestPageType2_Fragment | IContentListItem_BlankExperience_Fragment | IContentListItem_BlankSection_Fragment | IContentListItem_BlogPostPage_Fragment | IContentListItem_BlogSectionExperience_Fragment | IContentListItem_ButtonBlock_Fragment | IContentListItem_CTAElement_Fragment | IContentListItem_CarouselBlock_Fragment | IContentListItem_ContentRecsElement_Fragment | IContentListItem_ContinueReadingComponent_Fragment | IContentListItem_DanOHellloWorld_Fragment | IContentListItem_GenericMedia_Fragment | IContentListItem_HeadingElement_Fragment | IContentListItem_HeroBlock_Fragment | IContentListItem_ImageElement_Fragment | IContentListItem_ImageMedia_Fragment | IContentListItem_LandingPage_Fragment | IContentListItem_LayoutSettingsBlock_Fragment | IContentListItem_LinkItem_Fragment | IContentListItem_MegaMenuGroupBlock_Fragment | IContentListItem_MenuNavigationBlock_Fragment | IContentListItem_NewPageTypeDemo_Fragment | IContentListItem_OdpEmbedBlock_Fragment | IContentListItem_OptiFormsChoiceElement_Fragment | IContentListItem_OptiFormsContainerData_Fragment | IContentListItem_OptiFormsNumberElement_Fragment | IContentListItem_OptiFormsRangeElement_Fragment | IContentListItem_OptiFormsResetElement_Fragment | IContentListItem_OptiFormsSelectionElement_Fragment | IContentListItem_OptiFormsSubmitElement_Fragment | IContentListItem_OptiFormsTextareaElement_Fragment | IContentListItem_OptiFormsTextboxElement_Fragment | IContentListItem_OptiFormsUrlElement_Fragment | IContentListItem_PageSeoSettings_Fragment | IContentListItem_ParagraphElement_Fragment | IContentListItem_QuoteBlock_Fragment | IContentListItem_RichTextElement_Fragment | IContentListItem_SysContentFolder_Fragment | IContentListItem_TestDemoExperience_Fragment | IContentListItem_TestimonialElement_Fragment | IContentListItem_TextBlock_Fragment | IContentListItem_VideoElement_Fragment | IContentListItem_VideoMedia_Fragment | IContentListItem__Component_Fragment | IContentListItem__Content_Fragment | IContentListItem__Experience_Fragment | IContentListItem__Folder_Fragment | IContentListItem__Image_Fragment | IContentListItem__Media_Fragment | IContentListItem__Page_Fragment | IContentListItem__Section_Fragment | IContentListItem__Video_Fragment;
 
 type ExperienceData_AnotherExperience_Fragment = { __typename?: 'AnotherExperience', composition?: (
     { __typename?: 'CompositionStructureNode', nodes?: Array<(
@@ -17155,9 +16824,6 @@ export type CompositionComponentNodeDataFragment = { __typename?: 'CompositionCo
     { __typename?: 'AustinCarouselItem' }
     & { ' $fragmentRefs'?: { 'BlockData_AustinCarouselItem_Fragment': BlockData_AustinCarouselItem_Fragment;'ElementData_AustinCarouselItem_Fragment': ElementData_AustinCarouselItem_Fragment } }
   ) | (
-    { __typename?: 'AustinCustomRow' }
-    & { ' $fragmentRefs'?: { 'BlockData_AustinCustomRow_Fragment': BlockData_AustinCustomRow_Fragment;'ElementData_AustinCustomRow_Fragment': ElementData_AustinCustomRow_Fragment } }
-  ) | (
     { __typename?: 'AustinCustomRow2' }
     & { ' $fragmentRefs'?: { 'BlockData_AustinCustomRow2_Fragment': BlockData_AustinCustomRow2_Fragment;'ElementData_AustinCustomRow2_Fragment': ElementData_AustinCustomRow2_Fragment } }
   ) | (
@@ -17169,9 +16835,6 @@ export type CompositionComponentNodeDataFragment = { __typename?: 'CompositionCo
   ) | (
     { __typename?: 'AustinNavLinkGroup' }
     & { ' $fragmentRefs'?: { 'BlockData_AustinNavLinkGroup_Fragment': BlockData_AustinNavLinkGroup_Fragment;'ElementData_AustinNavLinkGroup_Fragment': ElementData_AustinNavLinkGroup_Fragment } }
-  ) | (
-    { __typename?: 'AustinNavLinkItem' }
-    & { ' $fragmentRefs'?: { 'BlockData_AustinNavLinkItem_Fragment': BlockData_AustinNavLinkItem_Fragment;'ElementData_AustinNavLinkItem_Fragment': ElementData_AustinNavLinkItem_Fragment } }
   ) | (
     { __typename?: 'AustinNavSubContainer' }
     & { ' $fragmentRefs'?: { 'BlockData_AustinNavSubContainer_Fragment': BlockData_AustinNavSubContainer_Fragment;'ElementData_AustinNavSubContainer_Fragment': ElementData_AustinNavSubContainer_Fragment } }
@@ -17307,9 +16970,6 @@ export type getContentByIdQuery = { __typename?: 'Query', content?: { __typename
       { __typename?: 'AustinCarouselItem' }
       & { ' $fragmentRefs'?: { 'IContentData_AustinCarouselItem_Fragment': IContentData_AustinCarouselItem_Fragment;'BlockData_AustinCarouselItem_Fragment': BlockData_AustinCarouselItem_Fragment;'PageData_AustinCarouselItem_Fragment': PageData_AustinCarouselItem_Fragment } }
     ) | (
-      { __typename?: 'AustinCustomRow' }
-      & { ' $fragmentRefs'?: { 'IContentData_AustinCustomRow_Fragment': IContentData_AustinCustomRow_Fragment;'BlockData_AustinCustomRow_Fragment': BlockData_AustinCustomRow_Fragment;'PageData_AustinCustomRow_Fragment': PageData_AustinCustomRow_Fragment } }
-    ) | (
       { __typename?: 'AustinCustomRow2' }
       & { ' $fragmentRefs'?: { 'IContentData_AustinCustomRow2_Fragment': IContentData_AustinCustomRow2_Fragment;'BlockData_AustinCustomRow2_Fragment': BlockData_AustinCustomRow2_Fragment;'PageData_AustinCustomRow2_Fragment': PageData_AustinCustomRow2_Fragment } }
     ) | (
@@ -17321,9 +16981,6 @@ export type getContentByIdQuery = { __typename?: 'Query', content?: { __typename
     ) | (
       { __typename?: 'AustinNavLinkGroup' }
       & { ' $fragmentRefs'?: { 'IContentData_AustinNavLinkGroup_Fragment': IContentData_AustinNavLinkGroup_Fragment;'BlockData_AustinNavLinkGroup_Fragment': BlockData_AustinNavLinkGroup_Fragment;'PageData_AustinNavLinkGroup_Fragment': PageData_AustinNavLinkGroup_Fragment } }
-    ) | (
-      { __typename?: 'AustinNavLinkItem' }
-      & { ' $fragmentRefs'?: { 'IContentData_AustinNavLinkItem_Fragment': IContentData_AustinNavLinkItem_Fragment;'BlockData_AustinNavLinkItem_Fragment': BlockData_AustinNavLinkItem_Fragment;'PageData_AustinNavLinkItem_Fragment': PageData_AustinNavLinkItem_Fragment } }
     ) | (
       { __typename?: 'AustinNavSubContainer' }
       & { ' $fragmentRefs'?: { 'IContentData_AustinNavSubContainer_Fragment': IContentData_AustinNavSubContainer_Fragment;'BlockData_AustinNavSubContainer_Fragment': BlockData_AustinNavSubContainer_Fragment;'PageData_AustinNavSubContainer_Fragment': PageData_AustinNavSubContainer_Fragment } }
@@ -17512,9 +17169,6 @@ export type getContentByPathQuery = { __typename?: 'Query', content?: { __typena
       { __typename?: 'AustinCarouselItem' }
       & { ' $fragmentRefs'?: { 'IContentData_AustinCarouselItem_Fragment': IContentData_AustinCarouselItem_Fragment;'PageData_AustinCarouselItem_Fragment': PageData_AustinCarouselItem_Fragment } }
     ) | (
-      { __typename?: 'AustinCustomRow' }
-      & { ' $fragmentRefs'?: { 'IContentData_AustinCustomRow_Fragment': IContentData_AustinCustomRow_Fragment;'PageData_AustinCustomRow_Fragment': PageData_AustinCustomRow_Fragment } }
-    ) | (
       { __typename?: 'AustinCustomRow2' }
       & { ' $fragmentRefs'?: { 'IContentData_AustinCustomRow2_Fragment': IContentData_AustinCustomRow2_Fragment;'PageData_AustinCustomRow2_Fragment': PageData_AustinCustomRow2_Fragment } }
     ) | (
@@ -17526,9 +17180,6 @@ export type getContentByPathQuery = { __typename?: 'Query', content?: { __typena
     ) | (
       { __typename?: 'AustinNavLinkGroup' }
       & { ' $fragmentRefs'?: { 'IContentData_AustinNavLinkGroup_Fragment': IContentData_AustinNavLinkGroup_Fragment;'PageData_AustinNavLinkGroup_Fragment': PageData_AustinNavLinkGroup_Fragment } }
-    ) | (
-      { __typename?: 'AustinNavLinkItem' }
-      & { ' $fragmentRefs'?: { 'IContentData_AustinNavLinkItem_Fragment': IContentData_AustinNavLinkItem_Fragment;'PageData_AustinNavLinkItem_Fragment': PageData_AustinNavLinkItem_Fragment } }
     ) | (
       { __typename?: 'AustinNavSubContainer' }
       & { ' $fragmentRefs'?: { 'IContentData_AustinNavSubContainer_Fragment': IContentData_AustinNavSubContainer_Fragment;'PageData_AustinNavSubContainer_Fragment': PageData_AustinNavSubContainer_Fragment } }
@@ -17705,7 +17356,7 @@ export type getContentTypeQueryVariables = Exact<{
 }>;
 
 
-export type getContentTypeQuery = { __typename?: 'Query', content?: { __typename?: '_ContentOutput', total?: number | null, items?: { __typename?: 'AnotherExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticleListElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinCarouselContainer', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinCarouselItem', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinCustomRow', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinCustomRow2', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinLinkItem', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinNavContainer', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinNavLinkGroup', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinNavLinkItem', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinNavSubContainer', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinTestExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinTestPageType', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinTestPageType2', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankSection', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlogPostPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlogSectionExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ButtonBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTAElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CarouselBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContentRecsElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContinueReadingComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'DanOHellloWorld', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'GenericMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeadingElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeroBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LandingPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LayoutSettingsBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LinkItem', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MegaMenuGroupBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MenuNavigationBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'NewPageTypeDemo', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OdpEmbedBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsChoiceElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsContainerData', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsNumberElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsRangeElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsResetElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsSelectionElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsSubmitElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsTextareaElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsTextboxElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsUrlElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ParagraphElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'QuoteBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'RichTextElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'SysContentFolder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TestDemoExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TestimonialElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TextBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Content', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Experience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Folder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Media', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Page', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null } | null };
+export type getContentTypeQuery = { __typename?: 'Query', content?: { __typename?: '_ContentOutput', total?: number | null, items?: { __typename?: 'AnotherExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ArticleListElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinCarouselContainer', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinCarouselItem', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinCustomRow2', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinLinkItem', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinNavContainer', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinNavLinkGroup', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinNavSubContainer', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinTestExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinTestPageType', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'AustinTestPageType2', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlankSection', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlogPostPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'BlogSectionExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ButtonBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CTAElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'CarouselBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContentRecsElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ContinueReadingComponent', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'DanOHellloWorld', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'GenericMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeadingElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'HeroBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ImageMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LandingPage', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LayoutSettingsBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'LinkItem', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MegaMenuGroupBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'MenuNavigationBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'NewPageTypeDemo', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OdpEmbedBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsChoiceElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsContainerData', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsNumberElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsRangeElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsResetElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsSelectionElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsSubmitElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsTextareaElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsTextboxElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'OptiFormsUrlElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'PageSeoSettings', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'ParagraphElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'QuoteBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'RichTextElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'SysContentFolder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TestDemoExperience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TestimonialElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'TextBlock', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoElement', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: 'VideoMedia', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Component', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Content', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Experience', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Folder', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Image', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Media', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Page', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Section', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | { __typename?: '_Video', _metadata?: { __typename?: 'ContentMetadata', types?: Array<string | null> | null } | { __typename?: 'InstanceMetadata', types?: Array<string | null> | null } | { __typename?: 'ItemMetadata', types?: Array<string | null> | null } | { __typename?: 'MediaMetadata', types?: Array<string | null> | null } | null } | null } | null };
 
 export const LinkDataFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"LinkData"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ContentUrl"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"base"}},{"kind":"Field","name":{"kind":"Name","value":"default"}}]}}]} as unknown as DocumentNode<LinkDataFragment, unknown>;
 export const ReferenceDataFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ReferenceData"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ContentReference"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"url"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"LinkData"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"LinkData"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ContentUrl"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"type"}},{"kind":"Field","name":{"kind":"Name","value":"base"}},{"kind":"Field","name":{"kind":"Name","value":"default"}}]}}]} as unknown as DocumentNode<ReferenceDataFragment, unknown>;
