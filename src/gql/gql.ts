@@ -14,6 +14,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
+    "fragment AustinCustomRow2Data on AustinCustomRow2 {\n  ColumnsConfig\n  ColumnOne {\n    ...IContentData\n    ...BlockData\n    ...ParagraphElementData\n  }\n  ColumnTwo {\n    ...IContentData\n    ...BlockData\n    ...ParagraphElementData\n  }\n  ColumnThree {\n    ...BlockData\n    ...IContentData\n    ...ParagraphElementData\n  }\n}": typeof types.AustinCustomRow2DataFragmentDoc,
     "fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {\n  MetaTitle\n  MetaDescription\n  MetaKeywords\n  SharingImage {\n    ...ReferenceData\n  }\n  GraphType\n}": typeof types.PageSeoSettingsPropertyDataFragmentDoc,
     "fragment ParagraphElementData on ParagraphElement {\n  text {\n    json\n    html\n  }\n}": typeof types.ParagraphElementDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  BlankExperienceSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": typeof types.BlankExperienceDataFragmentDoc,
@@ -27,6 +28,7 @@ type Documents = {
     "query getContentById($key: String!, $version: String, $locale: [Locales!], $path: String = \"-\", $domain: String, $changeset: String) {\n      content: _Content(\n        variation: { include: ALL }\n        where: {\n          _or: [\n            { _metadata: { key: { eq: $key }, version: { eq: $version } } }\n            {\n              _metadata: {\n                url: { default: { eq: $path }, base: { eq: $domain } }\n                version: { eq: $version }\n              }\n            }\n          ]\n          _metadata: { changeset: { eq: $changeset } }\n        }\n        locale: $locale\n      ) {\n        total\n        items: item {\n          ...IContentData\n          ...BlockData\n          ...PageData\n        }\n      }\n    }\n\nquery getContentByPath($path: [String!]!, $locale: [Locales!], $siteId: String, $changeset: String = null) {\n      content: _Content(\n        where: {\n          _metadata: {\n            url: { default: { in: $path }, base: { eq: $siteId } }\n            changeset: { eq: $changeset }\n          }\n        }\n        locale: $locale\n      ) {\n        total\n        items: item {\n          ...IContentData\n          ...PageData\n        }\n      }\n    }\n\nquery getContentType($key: String!, $version: String, $locale: [Locales!], $path: String = \"-\", $domain: String) {\n        content: _Content(\n            variation: { include: ALL }\n            where: {\n                _or: [\n                    { _metadata: { key: { eq: $key }, version: { eq: $version } } }\n                    { _metadata: { url: { hierarchical: { eq: $path }, base: { eq: $domain } }, version: { eq: $version } } }\n                ]\n            }\n            locale: $locale\n        ) {\n            total\n            items: item {\n                _metadata {\n                    types\n                }\n            }\n        }\n    }": typeof types.getContentByIdDocument,
 };
 const documents: Documents = {
+    "fragment AustinCustomRow2Data on AustinCustomRow2 {\n  ColumnsConfig\n  ColumnOne {\n    ...IContentData\n    ...BlockData\n    ...ParagraphElementData\n  }\n  ColumnTwo {\n    ...IContentData\n    ...BlockData\n    ...ParagraphElementData\n  }\n  ColumnThree {\n    ...BlockData\n    ...IContentData\n    ...ParagraphElementData\n  }\n}": types.AustinCustomRow2DataFragmentDoc,
     "fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {\n  MetaTitle\n  MetaDescription\n  MetaKeywords\n  SharingImage {\n    ...ReferenceData\n  }\n  GraphType\n}": types.PageSeoSettingsPropertyDataFragmentDoc,
     "fragment ParagraphElementData on ParagraphElement {\n  text {\n    json\n    html\n  }\n}": types.ParagraphElementDataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  BlankExperienceSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
@@ -54,6 +56,10 @@ const documents: Documents = {
  */
 export function gql(source: string): unknown;
 
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment AustinCustomRow2Data on AustinCustomRow2 {\n  ColumnsConfig\n  ColumnOne {\n    ...IContentData\n    ...BlockData\n    ...ParagraphElementData\n  }\n  ColumnTwo {\n    ...IContentData\n    ...BlockData\n    ...ParagraphElementData\n  }\n  ColumnThree {\n    ...BlockData\n    ...IContentData\n    ...ParagraphElementData\n  }\n}"): (typeof documents)["fragment AustinCustomRow2Data on AustinCustomRow2 {\n  ColumnsConfig\n  ColumnOne {\n    ...IContentData\n    ...BlockData\n    ...ParagraphElementData\n  }\n  ColumnTwo {\n    ...IContentData\n    ...BlockData\n    ...ParagraphElementData\n  }\n  ColumnThree {\n    ...BlockData\n    ...IContentData\n    ...ParagraphElementData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

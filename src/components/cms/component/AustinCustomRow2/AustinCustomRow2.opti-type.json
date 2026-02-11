@@ -1,0 +1,80 @@
+{
+	"baseType": "_component",
+	"compositionBehaviors": ["sectionEnabled"],
+	"contracts": [],
+	"description": "",
+	"displayName": "Austin Custom Row",
+	"isContract": false,
+	"key": "AustinCustomRow2",
+	"mayContainTypes": [],
+	"mediaFileExtensions": [],
+	"properties": {
+		"ColumnOne": {
+			"description": "Item to put in column 1 (left-to-right)",
+			"displayName": "Column 1",
+			"group": "Information",
+			"items": {
+				"allowedTypes": ["_component"],
+				"restrictedTypes": [],
+				"type": "content"
+			},
+			"localized": false,
+			"required": false,
+			"sortOrder": 0,
+			"type": "array"
+		},
+		"ColumnsConfig": {
+			"description": "What column layout to use",
+			"displayName": "Columns Configuration",
+			"enum": [
+				{
+					"displayName": "Space Evenly",
+					"value": "even"
+				},
+				{
+					"displayName": "2/3 - 1/3",
+					"value": "2/3-left"
+				},
+				{
+					"displayName": "1/3 - 2/3",
+					"value": "2/3-right"
+				}
+			],
+			"format": "selectOne",
+			"group": "Information",
+			"localized": false,
+			"required": true,
+			"sortOrder": -100,
+			"type": "string"
+		},
+		"ColumnThree": {
+			"description": "Item to put in column 3 (left-to-right)",
+			"displayName": "Column 3",
+			"group": "Information",
+			"items": {
+				"allowedTypes": ["_component"],
+				"restrictedTypes": [],
+				"type": "content"
+			},
+			"localized": false,
+			"required": false,
+			"sortOrder": 7,
+			"type": "array"
+		},
+		"ColumnTwo": {
+			"description": "Item to put in column 2 (left-to-right)",
+			"displayName": "Column 2",
+			"group": "Information",
+			"items": {
+				"allowedTypes": ["_component"],
+				"restrictedTypes": [],
+				"type": "content"
+			},
+			"localized": false,
+			"required": false,
+			"sortOrder": 0,
+			"type": "array"
+		}
+	},
+	"sortOrder": 0
+}

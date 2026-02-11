@@ -4,6 +4,7 @@ import { isDevelopment } from "@remkoj/optimizely-cms-react/rsc";
 import { AuthMode, createClient } from "@remkoj/optimizely-graph-client";
 import { draftMode } from "next/headers";
 
+import { getContentByPath } from "@/gql";
 import { factory } from "~/components/cms/factory";
 import { ACTIVE_CHANNEL } from "~/utils/cms/active-channel";
 
@@ -37,12 +38,15 @@ const {
 			nextJsFetchDirectives: true,
 			queryCache: !isDev,
 		});
+		// Alternatively, use isDev to always enable preview in development.
+		// if (isDev) {
 		if (scope === "request" && (await draftMode()).isEnabled) {
 			client.updateAuthentication(AuthMode.HMAC);
 			client.enablePreview();
 		}
 		return client;
 	},
+	getContentByPath: getContentByPath,
 });
 
 // Configure the Next.JS route handling for the pages

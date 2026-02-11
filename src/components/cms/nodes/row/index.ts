@@ -8,12 +8,12 @@ import DefaultRowComponent from "./DefaultRow";
 // Build dictionary
 export const NodesRowFactory: ComponentTypeDictionary = [
 	{
-		component: DefaultRowComponent,
-		type: "DefaultRow",
-	},
-	{
 		component: BackgroundRowComponent,
 		type: "BackgroundRow",
+	},
+	{
+		component: DefaultRowComponent,
+		type: "DefaultRow",
 	},
 ];
 

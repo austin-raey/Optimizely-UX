@@ -1,0 +1,18 @@
+fragment AustinCustomRow2Data on AustinCustomRow2 {
+	ColumnsConfig
+	ColumnOne {
+		...IContentData
+		...BlockData
+		...ParagraphElementData
+	}
+	ColumnTwo {
+		...IContentData
+		...BlockData
+		...ParagraphElementData
+	}
+	ColumnThree {
+		...BlockData
+		...IContentData
+		...ParagraphElementData
+	}
+}
