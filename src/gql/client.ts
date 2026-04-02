@@ -83,33 +83,6 @@ export const ParagraphElementDataFragmentDoc = gql`
     fragment ParagraphElementData on ParagraphElement {
   text {
     json
-    html
-  }
-}
-    `;
-export const AustinCustomRow2DataFragmentDoc = gql`
-    fragment AustinCustomRow2Data on AustinCustomRow2 {
-  ColumnsConfig
-  ColumnOne {
-    ...IContentData
-    ...BlockData
-    ...ParagraphElementData
-    ...AustinCustomRow2Data
-    ...ParagraphElementData
-  }
-  ColumnTwo {
-    ...IContentData
-    ...BlockData
-    ...ParagraphElementData
-    ...AustinCustomRow2Data
-    ...ParagraphElementData
-  }
-  ColumnThree {
-    ...BlockData
-    ...IContentData
-    ...ParagraphElementData
-    ...AustinCustomRow2Data
-    ...ParagraphElementData
   }
 }
     `;
@@ -118,7 +91,6 @@ export const CompositionComponentNodeDataFragmentDoc = gql`
   component {
     ...BlockData
     ...ElementData
-    ...AustinCustomRow2Data
     ...ParagraphElementData
   }
 }
@@ -189,12 +161,10 @@ export const LandingPageDataFragmentDoc = gql`
     fragment LandingPageData on LandingPage {
   TopContentArea {
     ...BlockData
-    ...AustinCustomRow2Data
     ...ParagraphElementData
   }
   MainContentArea {
     ...BlockData
-    ...AustinCustomRow2Data
     ...ParagraphElementData
   }
 }
@@ -290,7 +260,6 @@ export const getContentByIdDocument = gql`
       ...IContentData
       ...BlockData
       ...PageData
-      ...AustinCustomRow2Data
       ...ParagraphElementData
       ...BlankExperienceData
       ...LandingPageData
@@ -302,7 +271,6 @@ ${IContentInfoFragmentDoc}
 ${LinkDataFragmentDoc}
 ${BlockDataFragmentDoc}
 ${PageDataFragmentDoc}
-${AustinCustomRow2DataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
 ${BlankExperienceDataFragmentDoc}
 ${PageSeoSettingsPropertyDataFragmentDoc}
@@ -341,7 +309,6 @@ ${CompositionComponentNodeDataFragmentDoc}
 ${BlockDataFragmentDoc}
 ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
-${AustinCustomRow2DataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
 ${LandingPageDataFragmentDoc}`;
 export const getContentTypeDocument = gql`
