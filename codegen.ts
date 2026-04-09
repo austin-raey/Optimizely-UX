@@ -1,9 +1,7 @@
-import chalk from "chalk";
 // #region Environment variable file parsing
 // Environment file parsing and updating
 import * as DotEnv from "dotenv";
 import { expand } from "dotenv-expand";
-import figures from "figures";
 import fs from "node:fs";
 import path from "node:path";
 
@@ -20,7 +18,7 @@ envFiles
   .forEach((fileName) => {
     const result = DotEnv.config({ override: false, path: fileName });
     expand(result);
-    console.log(`${chalk.greenBright(figures.tick)} Processed ${fileName}`);
+    console.log(`Processed ${fileName}`);
   });
 // #endregion
 
