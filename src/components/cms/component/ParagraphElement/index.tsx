@@ -7,9 +7,9 @@ import { type ParagraphElementDataFragment, ParagraphElementDataFragmentDoc } fr
 import { DefaultParagraphProps } from "./displayTemplates";
 
 enum AlignClasses {
-	center = " mx-auto",
-	left = " mr-auto ml-0",
-	right = " ml-auto mr-0",
+  center = " mx-auto",
+  left = " mr-auto ml-0",
+  right = " ml-auto mr-0",
 }
 
 /**
@@ -17,27 +17,27 @@ enum AlignClasses {
  *
  */
 export const ParagraphElementElement: CmsComponent<ParagraphElementDataFragment, DefaultParagraphProps> = ({
-	contentLink,
-	ctx,
-	data: { text },
-	layoutProps,
+  contentLink,
+  ctx,
+  data: { text },
+  layoutProps,
 }) => {
-	const { placement = "left", transform = "default" } = extractSettings(layoutProps);
+  const { placement = "left", transform = "default" } = extractSettings(layoutProps);
 
-	const width = transform == "full" ? " max-w-none" : "";
-	const align = AlignClasses[placement];
+  const width = transform == "full" ? " max-w-none" : "";
+  const align = AlignClasses[placement];
 
-	return (
-		<CmsEditable
-			as={RichText}
-			className={`rich-text prose${width}${align}`}
-			cmsFieldName="text"
-			cmsId={contentLink.key}
-			ctx={ctx}
-			forwardCtx="ctx"
-			text={text?.json}
-		/>
-	);
+  return (
+    <CmsEditable
+      as={RichText}
+      className={`rich-text prose${width}${align}`}
+      cmsFieldName="text"
+      cmsId={contentLink.key}
+      ctx={ctx}
+      forwardCtx="ctx"
+      text={text?.json}
+    />
+  );
 };
 ParagraphElementElement.displayName = "Paragraph (Element/ParagraphElement)";
 ParagraphElementElement.getDataFragment = () => ["ParagraphElementData", ParagraphElementDataFragmentDoc];

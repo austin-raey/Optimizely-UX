@@ -14,47 +14,47 @@ import ts from "typescript-eslint";
 const gitignorePath = new URL(".gitignore", import.meta.url).pathname;
 
 const eslintConfig = defineConfig([
-	includeIgnoreFile(gitignorePath),
+  includeIgnoreFile(gitignorePath),
 
-	eslint.configs.recommended,
-	ts.configs.recommended,
-	ts.configs.stylistic,
-	// TODO: Enable this later after configuring rules properly
-	// unicorn.configs.recommended,
-	perfectionist.configs["recommended-natural"],
+  eslint.configs.recommended,
+  ts.configs.recommended,
+  ts.configs.stylistic,
+  // TODO: Enable this later after configuring rules properly
+  // unicorn.configs.recommended,
+  perfectionist.configs["recommended-natural"],
 
-	reactCompiler.configs.recommended,
-	...nextVitals,
-	...nextTs,
+  reactCompiler.configs.recommended,
+  ...nextVitals,
+  ...nextTs,
 
-	prettier,
+  prettier,
 
-	{
-		rules: {
-			// "unicorn/prevent-abbreviations": [
-			// 	"error",
-			// 	{
-			// 		replacements: {
-			// 			env: false,
-			// 			props: false,
-			// 		},
-			// 	},
-			// ],
-			// TODO: Revisit / re-enable this.
-			"@typescript-eslint/no-explicit-any": "off",
-		},
-	},
+  {
+    rules: {
+      // "unicorn/prevent-abbreviations": [
+      // 	"error",
+      // 	{
+      // 		replacements: {
+      // 			env: false,
+      // 			props: false,
+      // 		},
+      // 	},
+      // ],
+      // TODO: Revisit / re-enable this.
+      "@typescript-eslint/no-explicit-any": "off",
+    },
+  },
 
-	...storybook.configs["flat/recommended"],
+  ...storybook.configs["flat/recommended"],
 
-	globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts", "**/src/gql/**/*", "!.storybook"]),
-	{
-		settings: {
-			react: {
-				version: "19",
-			},
-		},
-	},
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts", "**/src/gql/**/*", "!.storybook"]),
+  {
+    settings: {
+      react: {
+        version: "19",
+      },
+    },
+  },
 ]);
 
 export default eslintConfig;

@@ -6,10 +6,10 @@ import VideoMediaComponent from "./VideoMedia";
 
 // Build dictionary
 export const MediaVideoFactory: ComponentTypeDictionary = [
-	{
-		component: VideoMediaComponent,
-		type: "VideoMedia",
-	},
+  {
+    component: VideoMediaComponent,
+    type: "VideoMedia",
+  },
 ];
 
 // Export dictionary

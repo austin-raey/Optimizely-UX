@@ -9,22 +9,22 @@ import DefaultRowComponent from "./default-row";
 
 // Build dictionary
 export const NodesRowFactory: ComponentTypeDictionary = [
-	{
-		component: BackgroundRowComponent,
-		type: "BackgroundRow",
-	},
-	{
-		component: CardRowComponent,
-		type: "CardRow",
-	},
-	{
-		component: CarouselRowComponent,
-		type: "CarouselRow",
-	},
-	{
-		component: DefaultRowComponent,
-		type: "DefaultRow",
-	},
+  {
+    component: BackgroundRowComponent,
+    type: "BackgroundRow",
+  },
+  {
+    component: CardRowComponent,
+    type: "CardRow",
+  },
+  {
+    component: CarouselRowComponent,
+    type: "CarouselRow",
+  },
+  {
+    component: DefaultRowComponent,
+    type: "DefaultRow",
+  },
 ];
 
 // Export dictionary

@@ -1,8 +1,8 @@
 import "server-only";
 import {
-	type ComponentFactory,
-	DefaultComponentFactory,
-	RichTextComponentDictionary,
+  type ComponentFactory,
+  DefaultComponentFactory,
+  RichTextComponentDictionary,
 } from "@remkoj/optimizely-cms-react/rsc";
 
 import cmsComponents from ".";

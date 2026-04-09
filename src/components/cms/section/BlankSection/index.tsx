@@ -11,23 +11,23 @@ import { SectionLayoutProps } from "../styles/displayTemplates";
  * A section without a predefined layout.
  */
 export const BlankSectionSection: CmsComponent<BlankSectionDataFragment, SectionLayoutProps> = ({
-	children,
-	contentLink,
-	ctx,
-	layoutProps,
+  children,
+  contentLink,
+  ctx,
+  layoutProps,
 }) => {
-	return (
-		<CmsEditable
-			as={DefaultGrid}
-			cmsId={contentLink.key}
-			contentLink={contentLink}
-			ctx={ctx}
-			data={{} as never}
-			layoutProps={layoutProps}
-		>
-			{children}
-		</CmsEditable>
-	);
+  return (
+    <CmsEditable
+      as={DefaultGrid}
+      cmsId={contentLink.key}
+      contentLink={contentLink}
+      ctx={ctx}
+      data={{} as never}
+      layoutProps={layoutProps}
+    >
+      {children}
+    </CmsEditable>
+  );
 };
 BlankSectionSection.displayName = "Blank Section (Section/BlankSection)";
 BlankSectionSection.getDataFragment = () => ["BlankSectionData", BlankSectionDataFragmentDoc];

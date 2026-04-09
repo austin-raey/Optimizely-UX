@@ -12,16 +12,16 @@ import SectionFactory from "./section";
 
 // Build dictionary
 export const CmsFactory: ComponentTypeDictionary = [
-	{
-		component: NodeComponent,
-		type: "Node",
-	},
-	...ComponentFactory,
-	...ExperienceFactory,
-	...MediaFactory,
-	...NodesFactory,
-	...PageFactory,
-	...SectionFactory,
+  {
+    component: NodeComponent,
+    type: "Node",
+  },
+  ...ComponentFactory,
+  ...ExperienceFactory,
+  ...MediaFactory,
+  ...NodesFactory,
+  ...PageFactory,
+  ...SectionFactory,
 ];
 
 // Export dictionary

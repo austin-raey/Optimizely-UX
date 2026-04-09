@@ -7,11 +7,11 @@ import StylesFactory from "./styles";
 
 // Build dictionary
 export const SectionFactory: ComponentTypeDictionary = [
-	{
-		component: BlankSectionComponent,
-		type: "BlankSection",
-	},
-	...StylesFactory,
+  {
+    component: BlankSectionComponent,
+    type: "BlankSection",
+  },
+  ...StylesFactory,
 ];
 
 // Export dictionary

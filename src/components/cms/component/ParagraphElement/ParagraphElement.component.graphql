@@ -1,5 +1,5 @@
 fragment ParagraphElementData on ParagraphElement {
-	text {
-		json
-	}
+  text {
+    json
+  }
 }

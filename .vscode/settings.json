@@ -1,20 +1,20 @@
 {
-	"biome.enabled": false,
-	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": "explicit",
-		"source.sort.json": "explicit"
-	},
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.detectIndentation": false,
-	"editor.formatOnSave": true,
-	"editor.insertSpaces": false,
-	"eslint.enable": true,
-	"files.eol": "\n",
-	"files.insertFinalNewline": true,
-	"files.trimFinalNewlines": true,
-	"files.trimTrailingWhitespace": true,
-	"js/ts.tsdk.promptToUseWorkspaceVersion": true,
-	"npm.packageManager": "pnpm",
-	"oxc.enable": false,
-	"prettier.enable": true
+  "biome.enabled": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.sort.json": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "eslint.enable": true,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+  "npm.packageManager": "pnpm",
+  "oxc.enable": false,
+  "prettier.enable": true
 }

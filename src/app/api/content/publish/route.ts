@@ -24,109 +24,109 @@ import { type NextRequest, NextResponse } from "next/server";
 })*/
 
 async function analyzeRequest(request: NextRequest): Promise<
-	| {
-			action?: string;
-			contentLinks: ContentLinkWithLocale[];
-			documentIds: (string | undefined)[];
-			subject: "bulk" | "doc";
-	  }
-	| { error: any; subject: "error" }
+  | {
+      action?: string;
+      contentLinks: ContentLinkWithLocale[];
+      documentIds: (string | undefined)[];
+      subject: "bulk" | "doc";
+    }
+  | { error: any; subject: "error" }
 > {
-	try {
-		const body = (await request.json()) as {
-			data?: { docId?: string; items?: Record<string, unknown> };
-			type?: { action?: string; subject?: string };
-		};
-		const subject = body?.type?.subject ?? "unknown";
-		const action = body?.type?.action ?? undefined;
-		const documentIds: (string | undefined)[] =
-			body?.type?.subject === "bulk"
-				? Object.getOwnPropertyNames(body?.data?.items ?? {})
-				: body?.type?.subject === "doc"
-					? [body?.data?.docId].filter((x) => x)
-					: [];
-		const contentLinks = documentIds
-			.map((docId) => {
-				const regexResult = docId?.match(/^([a-z0-9#-]+)_(([0-9]+)_){0,1}([a-zA-Z-_]{1,5})_([a-zA-Z]+)(_(.+)){0,1}$/);
-				if (!regexResult) return undefined;
-				return {
-					key: regexResult.at(1)?.replaceAll("-", ""),
-					locale: regexResult.at(4),
-					status: regexResult.at(5),
-					variation: regexResult.at(7),
-					version: regexResult.at(3),
-				} as ContentLinkWithLocale;
-			})
-			.filter(isNotNullOrUndefined);
-		return { action, contentLinks, documentIds, subject: subject as "bulk" | "doc" };
-	} catch (e: any) {
-		return {
-			error: typeof e.message === "string" ? e.message : e,
-			subject: "error",
-		};
-	}
+  try {
+    const body = (await request.json()) as {
+      data?: { docId?: string; items?: Record<string, unknown> };
+      type?: { action?: string; subject?: string };
+    };
+    const subject = body?.type?.subject ?? "unknown";
+    const action = body?.type?.action ?? undefined;
+    const documentIds: (string | undefined)[] =
+      body?.type?.subject === "bulk"
+        ? Object.getOwnPropertyNames(body?.data?.items ?? {})
+        : body?.type?.subject === "doc"
+          ? [body?.data?.docId].filter((x) => x)
+          : [];
+    const contentLinks = documentIds
+      .map((docId) => {
+        const regexResult = docId?.match(/^([a-z0-9#-]+)_(([0-9]+)_){0,1}([a-zA-Z-_]{1,5})_([a-zA-Z]+)(_(.+)){0,1}$/);
+        if (!regexResult) return undefined;
+        return {
+          key: regexResult.at(1)?.replaceAll("-", ""),
+          locale: regexResult.at(4),
+          status: regexResult.at(5),
+          variation: regexResult.at(7),
+          version: regexResult.at(3),
+        } as ContentLinkWithLocale;
+      })
+      .filter(isNotNullOrUndefined);
+    return { action, contentLinks, documentIds, subject: subject as "bulk" | "doc" };
+  } catch (e: any) {
+    return {
+      error: typeof e.message === "string" ? e.message : e,
+      subject: "error",
+    };
+  }
 }
 
 async function OptimizelyGraphPublishHandler(request: NextRequest): Promise<NextResponse> {
-	// Create the context
-	const client = createClient();
-	const router = new RouteResolver(client);
+  // Create the context
+  const client = createClient();
+  const router = new RouteResolver(client);
 
-	// Read and parse the request
-	const action = await analyzeRequest(request);
-	console.log(`Received Optimizely Graph Webhook for:`, action);
+  // Read and parse the request
+  const action = await analyzeRequest(request);
+  console.log(`Received Optimizely Graph Webhook for:`, action);
 
-	// Should be overridable for other patterns
-	function routeToPath(route: Route): string | undefined {
-		const paths = [route.path.endsWith("/") ? route.path.substring(0, route.path.length - 1) : route.path];
-		if (isNonEmptyString(route.variation)) paths.push(`var:${route.variation}`);
-		return paths.join("/");
-	}
+  // Should be overridable for other patterns
+  function routeToPath(route: Route): string | undefined {
+    const paths = [route.path.endsWith("/") ? route.path.substring(0, route.path.length - 1) : route.path];
+    if (isNonEmptyString(route.variation)) paths.push(`var:${route.variation}`);
+    return paths.join("/");
+  }
 
-	// Obtain the path information
-	const routes =
-		action.subject !== "error"
-			? (
-					await Promise.all(
-						action.contentLinks.map((contentLink) => {
-							const contentLinkWithoutVersion = { ...contentLink };
-							if (contentLinkWithoutVersion.version) delete contentLinkWithoutVersion.version;
-							return router.getRouteByLink(contentLinkWithoutVersion);
-						}),
-					)
-				).filter(isNotNullOrUndefined)
-			: [];
-	console.log(
-		`Resolved to routes from Graph:`,
-		routes.map((r) => {
-			const nr = { ...r, url: r.url.href };
-			return nr;
-		}),
-	);
-	const requestedPaths = routes.map(routeToPath).filter(isNonEmptyString).filter(toUniqueValues);
-	if (requestedPaths.length === 0) {
-		requestedPaths.push("/[[...path]]");
-	}
+  // Obtain the path information
+  const routes =
+    action.subject !== "error"
+      ? (
+          await Promise.all(
+            action.contentLinks.map((contentLink) => {
+              const contentLinkWithoutVersion = { ...contentLink };
+              if (contentLinkWithoutVersion.version) delete contentLinkWithoutVersion.version;
+              return router.getRouteByLink(contentLinkWithoutVersion);
+            }),
+          )
+        ).filter(isNotNullOrUndefined)
+      : [];
+  console.log(
+    `Resolved to routes from Graph:`,
+    routes.map((r) => {
+      const nr = { ...r, url: r.url.href };
+      return nr;
+    }),
+  );
+  const requestedPaths = routes.map(routeToPath).filter(isNonEmptyString).filter(toUniqueValues);
+  if (requestedPaths.length === 0) {
+    requestedPaths.push("/[[...path]]");
+  }
 
-	const paths = [
-		"/api/content/search",
-		"/api/content/articles",
-		"/api/me/[[...path]]",
-		"/sitemap.xml",
-		"/robots.txt",
-		...requestedPaths,
-	];
-	console.log(`Paths to flush`, paths);
+  const paths = [
+    "/api/content/search",
+    "/api/content/articles",
+    "/api/me/[[...path]]",
+    "/sitemap.xml",
+    "/robots.txt",
+    ...requestedPaths,
+  ];
+  console.log(`Paths to flush`, paths);
 
-	// Flush routes
-	paths.forEach((path) => {
-		if (path.includes("[")) revalidatePath(path, "page");
-		else revalidatePath(path);
-		revalidatePath(path, "layout");
-	});
+  // Flush routes
+  paths.forEach((path) => {
+    if (path.includes("[")) revalidatePath(path, "page");
+    else revalidatePath(path);
+    revalidatePath(path, "layout");
+  });
 
-	return NextResponse.json({ result: "ok", revalidatedPaths: paths });
-	//return handler(request)
+  return NextResponse.json({ result: "ok", revalidatedPaths: paths });
+  //return handler(request)
 }
 
 export const dynamic = "force-dynamic"; // Make sure all API-Requests are executed

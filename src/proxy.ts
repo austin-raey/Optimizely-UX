@@ -17,26 +17,26 @@ import { type NextRequest, NextResponse } from "next/server";
  * components.
  */
 export function proxy(request: NextRequest) {
-	// Make sure we have a known Visitor ID
-	const visitorId = Session.getOrCreateVisitorId(request);
-	const requestHeaders = new Headers(request.headers);
-	requestHeaders.set("x-visitorid", visitorId);
+  // Make sure we have a known Visitor ID
+  const visitorId = Session.getOrCreateVisitorId(request);
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-visitorid", visitorId);
 
-	// Expose the search params
-	requestHeaders.set("x-search", request.nextUrl.search);
+  // Expose the search params
+  requestHeaders.set("x-search", request.nextUrl.search);
 
-	const response = NextResponse.next({
-		request: {
-			headers: requestHeaders,
-		},
-	});
-	Session.addVisitorId(response, visitorId);
-	return response;
+  const response = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
+  Session.addVisitorId(response, visitorId);
+  return response;
 }
 
 export const config = {
-	matcher: [
-		// Skip all internal paths and paths with a '.'
-		"/((?!.*\\.|api|assets|preview|_next\\/static|_next\\/image|_vercel).*)",
-	],
+  matcher: [
+    // Skip all internal paths and paths with a '.'
+    "/((?!.*\\.|api|assets|preview|_next\\/static|_next\\/image|_vercel).*)",
+  ],
 };

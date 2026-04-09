@@ -6,10 +6,10 @@ import ImageMediaComponent from "./ImageMedia";
 
 // Build dictionary
 export const MediaImageFactory: ComponentTypeDictionary = [
-	{
-		component: ImageMediaComponent,
-		type: "ImageMedia",
-	},
+  {
+    component: ImageMediaComponent,
+    type: "ImageMedia",
+  },
 ];
 
 // Export dictionary

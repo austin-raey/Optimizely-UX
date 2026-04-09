@@ -16,37 +16,37 @@ import { ACTIVE_CHANNEL } from "~/utils/cms/active-channel";
  * 2. Use the fragment or query from the component to fetch the data by ID
  */
 const {
-	CmsPage: Page,
-	generateMetadata,
-	generateStaticParams,
+  CmsPage: Page,
+  generateMetadata,
+  generateStaticParams,
 } = createPage(factory, {
-	/**
-	 * Configure the Web Application in the CMS that is bound to this installation
-	 */
-	channel: ACTIVE_CHANNEL,
+  /**
+   * Configure the Web Application in the CMS that is bound to this installation
+   */
+  channel: ACTIVE_CHANNEL,
 
-	/**
-	 * The factory to use to create the GraphQL Client to fetch data from Optimizely
-	 * CMS. As this page is never used for preview, we're ignoring the first parameter.
-	 *
-	 * @returns     The Optimizely Graph Client
-	 */
-	client: async (token?: string, scope?: "metadata" | "request") => {
-		const isDev = isDevelopment();
-		const client = createClient(undefined, token, {
-			cache: !isDev,
-			nextJsFetchDirectives: true,
-			queryCache: !isDev,
-		});
-		// Alternatively, use isDev to always enable preview in development.
-		// if (isDev) {
-		if (scope === "request" && (await draftMode()).isEnabled) {
-			client.updateAuthentication(AuthMode.HMAC);
-			client.enablePreview();
-		}
-		return client;
-	},
-	getContentByPath: getContentByPath,
+  /**
+   * The factory to use to create the GraphQL Client to fetch data from Optimizely
+   * CMS. As this page is never used for preview, we're ignoring the first parameter.
+   *
+   * @returns     The Optimizely Graph Client
+   */
+  client: async (token?: string, scope?: "metadata" | "request") => {
+    const isDev = isDevelopment();
+    const client = createClient(undefined, token, {
+      cache: !isDev,
+      nextJsFetchDirectives: true,
+      queryCache: !isDev,
+    });
+    // Alternatively, use isDev to always enable preview in development.
+    // if (isDev) {
+    if (scope === "request" && (await draftMode()).isEnabled) {
+      client.updateAuthentication(AuthMode.HMAC);
+      client.enablePreview();
+    }
+    return client;
+  },
+  getContentByPath: getContentByPath,
 });
 
 // Configure the Next.JS route handling for the pages

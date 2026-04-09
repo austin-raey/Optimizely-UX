@@ -7,14 +7,14 @@ import ParagraphElementComponent from "./ParagraphElement";
 
 // Build dictionary
 export const ComponentFactory: ComponentTypeDictionary = [
-	{
-		component: AustinCustomRow2Component,
-		type: "AustinCustomRow2",
-	},
-	{
-		component: ParagraphElementComponent,
-		type: "ParagraphElement",
-	},
+  {
+    component: AustinCustomRow2Component,
+    type: "AustinCustomRow2",
+  },
+  {
+    component: ParagraphElementComponent,
+    type: "ParagraphElement",
+  },
 ];
 
 // Export dictionary

@@ -6,10 +6,10 @@ import LandingPageComponent from "./LandingPage";
 
 // Build dictionary
 export const PageFactory: ComponentTypeDictionary = [
-	{
-		component: LandingPageComponent,
-		type: "LandingPage",
-	},
+  {
+    component: LandingPageComponent,
+    type: "LandingPage",
+  },
 ];
 
 // Export dictionary

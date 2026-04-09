@@ -7,18 +7,18 @@ import DefaultColumnComponent from "./default-column";
 
 // Build dictionary
 export const NodesColumnFactory: ComponentTypeDictionary = [
-	{
-		component: CardColumnComponent,
-		type: "CardColumn",
-	},
-	{
-		component: DefaultColumnComponent,
-		type: "DefaultColumn",
-	},
-	{
-		component: DefaultColumnComponent,
-		type: "DefaultColumn",
-	},
+  {
+    component: CardColumnComponent,
+    type: "CardColumn",
+  },
+  {
+    component: DefaultColumnComponent,
+    type: "DefaultColumn",
+  },
+  {
+    component: DefaultColumnComponent,
+    type: "DefaultColumn",
+  },
 ];
 
 // Export dictionary

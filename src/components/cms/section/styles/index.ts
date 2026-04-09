@@ -6,10 +6,10 @@ import DefaultGridComponent from "./default-grid";
 
 // Build dictionary
 export const SectionStylesFactory: ComponentTypeDictionary = [
-	{
-		component: DefaultGridComponent,
-		type: "DefaultGrid",
-	},
+  {
+    component: DefaultGridComponent,
+    type: "DefaultGrid",
+  },
 ];
 
 // Export dictionary

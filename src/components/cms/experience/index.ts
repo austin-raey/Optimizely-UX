@@ -6,10 +6,10 @@ import BlankExperienceComponent from "./BlankExperience";
 
 // Build dictionary
 export const ExperienceFactory: ComponentTypeDictionary = [
-	{
-		component: BlankExperienceComponent,
-		type: "BlankExperience",
-	},
+  {
+    component: BlankExperienceComponent,
+    type: "BlankExperience",
+  },
 ];
 
 // Export dictionary
