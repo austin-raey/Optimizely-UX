@@ -86,12 +86,36 @@ export const ParagraphElementDataFragmentDoc = gql`
   }
 }
     `;
+export const AustinCustomRow2DataFragmentDoc = gql`
+    fragment AustinCustomRow2Data on AustinCustomRow2 {
+  ColumnsConfig
+  ColumnOne {
+    ...IContentData
+    ...BlockData
+    ...ParagraphElementData
+    ...AustinCustomRow2Data
+  }
+  ColumnTwo {
+    ...IContentData
+    ...BlockData
+    ...ParagraphElementData
+    ...AustinCustomRow2Data
+  }
+  ColumnThree {
+    ...IContentData
+    ...BlockData
+    ...ParagraphElementData
+    ...AustinCustomRow2Data
+  }
+}
+    `;
 export const CompositionComponentNodeDataFragmentDoc = gql`
     fragment CompositionComponentNodeData on ICompositionComponentNode {
   component {
     ...BlockData
     ...ElementData
     ...ParagraphElementData
+    ...AustinCustomRow2Data
   }
 }
     `;
@@ -162,10 +186,12 @@ export const LandingPageDataFragmentDoc = gql`
   TopContentArea {
     ...BlockData
     ...ParagraphElementData
+    ...AustinCustomRow2Data
   }
   MainContentArea {
     ...BlockData
     ...ParagraphElementData
+    ...AustinCustomRow2Data
   }
 }
     `;
@@ -261,6 +287,7 @@ export const getContentByIdDocument = gql`
       ...BlockData
       ...PageData
       ...ParagraphElementData
+      ...AustinCustomRow2Data
       ...BlankExperienceData
       ...LandingPageData
     }
@@ -272,6 +299,7 @@ ${LinkDataFragmentDoc}
 ${BlockDataFragmentDoc}
 ${PageDataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
+${AustinCustomRow2DataFragmentDoc}
 ${BlankExperienceDataFragmentDoc}
 ${PageSeoSettingsPropertyDataFragmentDoc}
 ${ReferenceDataFragmentDoc}
@@ -310,6 +338,7 @@ ${BlockDataFragmentDoc}
 ${ElementDataFragmentDoc}
 ${IElementDataFragmentDoc}
 ${ParagraphElementDataFragmentDoc}
+${AustinCustomRow2DataFragmentDoc}
 ${LandingPageDataFragmentDoc}`;
 export const getContentTypeDocument = gql`
     query getContentType($key: String!, $version: String, $locale: [Locales!], $path: String = "-", $domain: String) {

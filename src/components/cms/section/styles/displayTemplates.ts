@@ -1,7 +1,7 @@
 import type { LayoutProps } from "@remkoj/optimizely-cms-react";
 import type { JSX, ReactNode } from "react";
 
-import type DefaultGridStyles from "./DefaultGrid/DefaultGrid.opti-style.json";
+import type DefaultGridStyles from "./default-grid/default-grid.opti-style.json";
 
 export type DefaultGridComponent<DT extends Record<string, any> = Record<string, any>> = (
 	props: DefaultGridComponentProps<DT>,

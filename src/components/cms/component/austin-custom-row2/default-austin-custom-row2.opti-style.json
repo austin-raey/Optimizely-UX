@@ -1,0 +1,27 @@
+{
+	"contentType": "AustinCustomRow2",
+	"displayName": "Default",
+	"isDefault": true,
+	"key": "DefaultAustinCustomRow2",
+	"settings": {
+		"placement": {
+			"choices": {
+				"center": {
+					"displayName": "Center",
+					"sortOrder": 20
+				},
+				"left": {
+					"displayName": "Left",
+					"sortOrder": 10
+				},
+				"right": {
+					"displayName": "Right",
+					"sortOrder": 30
+				}
+			},
+			"displayName": "Placement",
+			"editor": "",
+			"sortOrder": 20
+		}
+	}
+}

@@ -16,6 +16,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 type Documents = {
     "fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {\n  MetaTitle\n  MetaDescription\n  MetaKeywords\n  SharingImage {\n    ...ReferenceData\n  }\n  GraphType\n}": typeof types.PageSeoSettingsPropertyDataFragmentDoc,
     "fragment ParagraphElementData on ParagraphElement {\n  text {\n    json\n  }\n}": typeof types.ParagraphElementDataFragmentDoc,
+    "fragment AustinCustomRow2Data on AustinCustomRow2 {\n  ColumnsConfig\n  ColumnOne {\n    ...IContentData\n    ...BlockData\n  }\n  ColumnTwo {\n    ...IContentData\n    ...BlockData\n  }\n  ColumnThree {\n    ...IContentData\n    ...BlockData\n  }\n}": typeof types.AustinCustomRow2DataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  BlankExperienceSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": typeof types.BlankExperienceDataFragmentDoc,
     "query getBlankExperienceMetaData($key: String!, $locale: [Locales]) {\n  page: BlankExperience(where: {_metadata: {key: {eq: $key}}}, locale: $locale) {\n    items {\n      meta: _metadata {\n        url {\n          base\n        }\n        displayName\n      }\n      seo: BlankExperienceSeoSettings {\n        title: MetaTitle\n        description: MetaDescription\n        image: SharingImage {\n          ...ReferenceData\n        }\n        type: GraphType\n      }\n    }\n  }\n}": typeof types.getBlankExperienceMetaDataDocument,
     "fragment ImageMediaComponentData on ImageMedia {\n  alt: AltText\n  meta: _metadata {\n    url {\n      default\n    }\n    name: displayName\n  }\n}": typeof types.ImageMediaComponentDataFragmentDoc,
@@ -29,6 +30,7 @@ type Documents = {
 const documents: Documents = {
     "fragment PageSeoSettingsPropertyData on PageSeoSettingsProperty {\n  MetaTitle\n  MetaDescription\n  MetaKeywords\n  SharingImage {\n    ...ReferenceData\n  }\n  GraphType\n}": types.PageSeoSettingsPropertyDataFragmentDoc,
     "fragment ParagraphElementData on ParagraphElement {\n  text {\n    json\n  }\n}": types.ParagraphElementDataFragmentDoc,
+    "fragment AustinCustomRow2Data on AustinCustomRow2 {\n  ColumnsConfig\n  ColumnOne {\n    ...IContentData\n    ...BlockData\n  }\n  ColumnTwo {\n    ...IContentData\n    ...BlockData\n  }\n  ColumnThree {\n    ...IContentData\n    ...BlockData\n  }\n}": types.AustinCustomRow2DataFragmentDoc,
     "fragment BlankExperienceData on BlankExperience {\n  BlankExperienceSeoSettings {\n    ...PageSeoSettingsPropertyData\n  }\n  ...ExperienceData\n}": types.BlankExperienceDataFragmentDoc,
     "query getBlankExperienceMetaData($key: String!, $locale: [Locales]) {\n  page: BlankExperience(where: {_metadata: {key: {eq: $key}}}, locale: $locale) {\n    items {\n      meta: _metadata {\n        url {\n          base\n        }\n        displayName\n      }\n      seo: BlankExperienceSeoSettings {\n        title: MetaTitle\n        description: MetaDescription\n        image: SharingImage {\n          ...ReferenceData\n        }\n        type: GraphType\n      }\n    }\n  }\n}": types.getBlankExperienceMetaDataDocument,
     "fragment ImageMediaComponentData on ImageMedia {\n  alt: AltText\n  meta: _metadata {\n    url {\n      default\n    }\n    name: displayName\n  }\n}": types.ImageMediaComponentDataFragmentDoc,
@@ -62,6 +64,10 @@ export function gql(source: "fragment PageSeoSettingsPropertyData on PageSeoSett
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "fragment ParagraphElementData on ParagraphElement {\n  text {\n    json\n  }\n}"): (typeof documents)["fragment ParagraphElementData on ParagraphElement {\n  text {\n    json\n  }\n}"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "fragment AustinCustomRow2Data on AustinCustomRow2 {\n  ColumnsConfig\n  ColumnOne {\n    ...IContentData\n    ...BlockData\n  }\n  ColumnTwo {\n    ...IContentData\n    ...BlockData\n  }\n  ColumnThree {\n    ...IContentData\n    ...BlockData\n  }\n}"): (typeof documents)["fragment AustinCustomRow2Data on AustinCustomRow2 {\n  ColumnsConfig\n  ColumnOne {\n    ...IContentData\n    ...BlockData\n  }\n  ColumnTwo {\n    ...IContentData\n    ...BlockData\n  }\n  ColumnThree {\n    ...IContentData\n    ...BlockData\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

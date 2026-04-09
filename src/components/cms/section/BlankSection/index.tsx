@@ -3,7 +3,7 @@ import { CmsEditable } from "@remkoj/optimizely-cms-react/rsc";
 
 import { type BlankSectionDataFragment, BlankSectionDataFragmentDoc } from "@/gql/graphql";
 
-import DefaultGrid from "../styles/DefaultGrid";
+import DefaultGrid from "../styles/default-grid";
 import { SectionLayoutProps } from "../styles/displayTemplates";
 
 /**
@@ -17,7 +17,14 @@ export const BlankSectionSection: CmsComponent<BlankSectionDataFragment, Section
 	layoutProps,
 }) => {
 	return (
-		<CmsEditable as={DefaultGrid} cmsId={contentLink.key} ctx={ctx} data={{}} layoutProps={layoutProps}>
+		<CmsEditable
+			as={DefaultGrid}
+			cmsId={contentLink.key}
+			contentLink={contentLink}
+			ctx={ctx}
+			data={{} as never}
+			layoutProps={layoutProps}
+		>
 			{children}
 		</CmsEditable>
 	);

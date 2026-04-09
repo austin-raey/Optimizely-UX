@@ -1,7 +1,7 @@
 import type { LayoutProps } from "@remkoj/optimizely-cms-react";
 import type { JSX, ReactNode } from "react";
 
-import type DefaultColumnStyles from "./DefaultColumn/DefaultColumn.opti-style.json";
+import type DefaultColumnStyles from "./default-column/default-column.opti-style.json";
 
 export type ColumnComponent<
 	DT extends Record<string, any> = Record<string, any>,

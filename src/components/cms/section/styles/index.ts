@@ -2,7 +2,7 @@
 // @not-modified => When this line is removed, the "force" parameter of the CLI tool is required to overwrite this file
 import { type ComponentTypeDictionary } from "@remkoj/optimizely-cms-react";
 
-import DefaultGridComponent from "./DefaultGrid";
+import DefaultGridComponent from "./default-grid";
 
 // Build dictionary
 export const SectionStylesFactory: ComponentTypeDictionary = [
